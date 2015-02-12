@@ -1,1 +1,10 @@
 cin>>num1>>num2; //read line <1 2>
+
+//adding elements to vector
+vector<int> a;
+a.push_back(num);
+
+//read string as input
+char str[100000];
+scanf("%s",str);
+for(t=0;str[t]!='\0';t++); // t = length of string

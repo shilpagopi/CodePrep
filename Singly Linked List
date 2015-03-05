@@ -53,7 +53,10 @@ void InsertInLinkedList(struct ListNode **ptrtohead, int data, int position){
         }
         //insert at end
         if(inserted==0){
+            if(position==count)
             prevcurr->next = newnode;
+            else 
+            printf("\nPosition too far.No insertion possible.");
         }
     }    
 }

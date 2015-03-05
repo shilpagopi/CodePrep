@@ -1,0 +1,127 @@
+//Singly linked list
+
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+struct ListNode{
+    int data;
+    struct ListNode *next;
+};
+
+int ListLength(struct ListNode *head){
+    int count=0;
+    struct ListNode *curr=head;
+    while(curr!=NULL){
+        printf("%d", curr->data);
+        curr = curr->next;
+        count++;
+    }
+    return count;    
+}
+
+//head itself is a pointer
+void InsertInLinkedList(struct ListNode **ptrtohead, int data, int position){
+    //preparing new node
+    struct ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
+    newnode->data = data;
+    
+    struct ListNode *head, *curr, *prevcurr;
+    head=*ptrtohead;
+    curr=head;
+    int count=1;
+    bool inserted = 0;
+    
+    //insert at start
+    if(position==1){       
+       newnode->next= head;
+       *ptrtohead = newnode;
+    }
+    else { 
+        //insert in between
+        while(curr!=NULL && inserted==0){
+            if(position-count==1){
+                newnode->next = curr->next;
+                curr->next = newnode;   
+                inserted=1;
+            }
+            else{
+                count++;
+                prevcurr=curr;
+                curr=curr->next;
+            }
+        }
+        //insert at end
+        if(inserted==0){
+            prevcurr->next = newnode;
+        }
+    }    
+}
+
+void DeleteNodefromLinkedList(struct ListNode **ptrtohead, int position){
+    struct ListNode *head,*curr,*prevcurr,*del,*prevprevcurr;
+    head = *ptrtohead;
+    curr=head;
+    int deleted=0,count=1;
+    
+    //delete start
+    if(position==1){
+        *ptrtohead = head->next;
+        free(head);
+    }
+    else{
+        //delete from in between
+        while(curr!=NULL && deleted==0){
+            if(position-count==1){
+                del=curr->next;
+                curr->next = del->next;
+                free(del);
+                deleted=1;
+            }
+            else{
+                count++;
+                prevprevcurr=prevcurr;
+                prevcurr=curr;
+                curr=curr->next;
+            }
+        }
+            //delete at end
+        if(deleted==0){
+            prevprevcurr->next = NULL;
+            free(prevcurr);
+        }
+    }   
+}
+
+void DeleteLinkedList(struct ListNode **ptrtohead){
+    struct ListNode *curr,*del;
+    curr = *ptrtohead;
+    while(curr!=NULL){
+        del=curr;
+        curr=curr->next;
+        free(del);
+    }
+    *ptrtohead = NULL;    
+}
+
+int main() {
+    //creating a singly linked list
+	struct ListNode *a,*b,*c,*head;
+    a = (ListNode *)malloc(sizeof(ListNode));
+    b = (ListNode *)malloc(sizeof(ListNode));
+    c = (ListNode *)malloc(sizeof(ListNode));
+    a->next = b;
+    b->next = c;
+    a->data = 1;
+    b->data = 2;
+    c->data =4;
+    head=a;
+    
+    InsertInLinkedList(&head,5,4);
+    DeleteNodefromLinkedList(&head,2);
+    DeleteLinkedList(&head);
+    int count = ListLength(head);
+    printf("\nCount:%d", count); 
+    
+	return 0;
+}

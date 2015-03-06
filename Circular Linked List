@@ -1,0 +1,155 @@
+//Circular linked list
+
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+struct ListNode{
+    int data;
+    struct ListNode *next = NULL;
+};
+
+int ListLength(struct ListNode *head){
+    int count=0;
+    struct ListNode *curr=head;
+       
+    if(head==NULL)
+        return 0;
+    
+   do{  printf("%d", curr->data);
+        curr = curr->next;
+        count++;
+    } while(curr!=head);
+    
+    return count;    
+}
+
+void InsertAtEndCLL(struct ListNode **ptrtohead, int data){
+    struct ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
+    newnode->data = data;
+    struct ListNode *head,*curr;
+    head=*ptrtohead;
+    curr=head;
+    
+    if(head==NULL)
+       {
+        *ptrtohead = newnode;
+        newnode->next=newnode;
+        return;
+       }
+    
+    while(curr->next!=head)
+        curr = curr->next;
+    
+    curr->next=newnode;
+    newnode->next = head;    
+}
+
+void InsertAtStartCLL(struct ListNode **ptrtohead, int data){
+    struct ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
+    newnode->data = data;
+    struct ListNode *head,*curr;
+    head=*ptrtohead;
+    curr=head;
+    
+    if(head==NULL)
+       {
+        *ptrtohead = newnode;
+        newnode->next=newnode;
+        return;
+       }
+    
+    while(curr->next!=head)
+        curr = curr->next;
+    
+    curr->next=newnode;
+    newnode->next = head;
+    
+    //relocating head
+    *ptrtohead = newnode;    
+}
+
+void DeleteEndNodeCLL(struct ListNode **ptrtohead){
+    struct ListNode *head,*curr,*prevcurr;
+    head=*ptrtohead;
+    curr=head;
+    
+    if(head==NULL)
+       {
+        printf("No node to delete");
+        return;
+       }
+    
+    if(head->next==head){
+        free(head);
+        *ptrtohead = NULL;
+        return;
+    }
+    
+    while(curr->next!=head){
+        prevcurr=curr;
+        curr = curr->next;
+    }
+    
+    prevcurr->next=head;
+    free(curr);   
+}
+
+void DeleteStartNodeCLL(struct ListNode **ptrtohead){
+    
+    struct ListNode *head,*curr,*prevcurr;
+    head=*ptrtohead;
+    curr=head;
+    
+    if(head==NULL)
+       {
+        printf("No node to delete");
+        return;
+       }
+    
+    if(head->next==head){
+        free(head);
+        *ptrtohead = NULL;
+        return;
+    }
+    
+    //shift head one node forward,reinitialize pointers and then delete end node;
+    *ptrtohead = head->next;
+    head = head->next;
+    curr=head;
+    
+    while(curr->next!=head){
+        prevcurr=curr;
+        curr = curr->next;
+    }
+    
+    prevcurr->next=head;
+    free(curr);    
+    
+}
+
+int main() {
+    //creating a circular linked list
+	struct ListNode *a,*b,*c,*head, *curr;
+    a = (ListNode *)malloc(sizeof(ListNode));
+    b = (ListNode *)malloc(sizeof(ListNode));
+    c = (ListNode *)malloc(sizeof(ListNode));
+    a->next = b;
+    b->next = c;
+    c->next = a;
+    
+    a->data = 1;
+    b->data = 2;
+    c->data =4;
+    head=a;
+    
+    //head=NULL;
+    //InsertAtEndCLL(&head,5);
+    //InsertAtStartCLL(&head,5);
+    //DeleteEndNodeCLL(&head);
+   DeleteStartNodeCLL(&head);
+    
+   int count = ListLength(head);
+   printf("\nCount:%d", count); 
+   return 0;
+}

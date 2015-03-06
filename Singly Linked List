@@ -67,6 +67,11 @@ void DeleteNodefromLinkedList(struct ListNode **ptrtohead, int position){
     curr=head;
     int deleted=0,count=1;
     
+    if(head==NULL){
+        printf("List empty");
+        return;
+    }
+    
     //delete start
     if(position==1){
         *ptrtohead = head->next;

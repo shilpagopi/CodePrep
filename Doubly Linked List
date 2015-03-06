@@ -1,0 +1,151 @@
+//Doubly linked list
+
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+struct ListNode{
+    int data;
+    struct ListNode *next = NULL;
+    struct ListNode *prev;
+};
+
+int ListLength(struct ListNode *head){
+    int count=0;
+    struct ListNode *curr=head;
+    while(curr!=NULL){
+        printf("%d", curr->data);
+        curr = curr->next;
+        count++;
+    }
+    return count;    
+}
+
+//head itself is a pointer
+void InsertInDoublyLinkedList(struct ListNode **ptrtohead, int data, int position){
+    //preparing new node
+    struct ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
+    newnode->data = data;
+    
+    struct ListNode *head, *curr, *prevcurr;
+    head=*ptrtohead;
+    curr=head;
+    int count=1;
+    bool inserted = 0;
+    
+    //insert at start
+    if(position==1){       
+       newnode->next= head;
+       newnode->prev=NULL;
+       head->prev = newnode;
+       *ptrtohead = newnode;        
+    }
+    else {       
+        //insert in between
+        while(curr!=NULL && inserted==0){
+            if(position-count==1){
+                newnode->next = curr->next;
+                newnode->prev = curr;
+                curr->next = newnode;
+                curr->next->prev= newnode;
+                inserted=1;
+            }
+            else{
+                count++;
+                prevcurr=curr;
+                curr=curr->next;
+            }
+        }
+        
+        //insert at end
+        if(inserted==0){
+            if(position==count){
+            prevcurr->next = newnode;
+            newnode->prev= prevcurr;
+            newnode->next=NULL;
+            }
+            else printf("\nPosition too far.No insertion possible.");
+        }
+    }    
+}
+
+void DeleteNodefromDoublyLinkedList(struct ListNode **ptrtohead, int position){
+    struct ListNode *head,*curr,*del;
+    head = *ptrtohead;
+    curr = head;
+    int deleted=0,count=1;
+   
+    if(head==NULL){
+        printf("List empty");
+        return;
+    }
+    
+    //delete start
+    if(position==1){
+        *ptrtohead = head->next;
+        if(head->next!=NULL)
+             head->next->prev=NULL;
+        free(head);
+        return;
+    }
+    
+    while(count<position && curr->next!=NULL){
+        curr=curr->next;
+        count++;        
+    }
+    
+    //check for valid position
+    if(position!=count){
+        printf("\nNo position exists");
+        return;
+    }
+    
+    //delete last node
+    if(curr->next==NULL){
+        curr->prev->next=NULL;
+        free(curr);
+    }
+    else{
+    //delete intermediate node    
+     curr->prev->next = curr->next;
+     curr->next->prev = curr->prev;
+     free(curr);
+    }   
+    
+}
+
+void DeleteLinkedList(struct ListNode **ptrtohead){
+    struct ListNode *curr,*del;
+    curr = *ptrtohead;
+    while(curr!=NULL){
+        del=curr;
+        curr=curr->next;
+        free(del);
+    }
+    *ptrtohead = NULL;    
+}
+
+int main() {
+    //creating a doubly linked list
+	struct ListNode *a,*b,*c,*head, *curr;
+    a = (ListNode *)malloc(sizeof(ListNode));
+    b = (ListNode *)malloc(sizeof(ListNode));
+    c = (ListNode *)malloc(sizeof(ListNode));
+    a->next = b;
+    b->next = c;
+    b->prev=a;
+    c->prev=b;
+    
+    a->data = 1;
+    b->data = 2;
+    c->data =4;
+    head=a;
+    
+    InsertInDoublyLinkedList(&head,5,2);
+    DeleteNodefromDoublyLinkedList(&head,4);
+    //DeleteLinkedList(&head);
+   
+   int count = ListLength(head);
+   printf("\nCount:%d", count); 
+   return 0;
+}

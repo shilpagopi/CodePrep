@@ -1,0 +1,49 @@
+--------------------------------------------------------------------------------------------------------------------------------
+//string number addition
+handle same size cases
+handle different size cases
+do not forget to insert carry left over at the end
+
+--------------------------------------------------------------------------------------------------------------------------------
+//string number multiplication
+get smaller element in b
+do not forget to add zeroes in rows aptly
+
+--------------------------------------------------------------------------------------------------------------------------------
+//maximum contiguous subarray
+ maxending = (maxending+a[j]>a[j])?maxending+a[j]:a[j];
+maxsumtillnow=(maxsumtillnow>maxending)? maxsumtillnow:maxending;        
+
+--------------------------------------------------------------------------------------------------------------------------------
+//coin change problem - different ways to make change
+
+initialize dp with 0; first column with 1;
+row:
+        if(i%coins[0]==0)
+        a[0][i]=1;
+    
+for each cell:
+        long long int v=0;
+        v+=(j-coins[i]>=0)?a[i][j-coins[i]]:0;
+        v+=a[i-1][j];
+        
+--------------------------------------------------------------------------------------------------------------------------------
+//Minimum candies: children seated in a row; min 1; If two children sit next to each other, then the one with the higher rating must get more candies
+if 1 child, 1 candy
+if same ratings, the latter one gets 1 candy
+if ratings dip, the latter one gets 1 candy
+increase/decrease candies accordingly.
+
+if(decreased to 0 at any stage)
+set it as one. traverse back...and increment the candies
+break if a child has a smaller or equal rating
+break if candy number differs by more than one.
+
+--------------------------------------------------------------------------------------------------------------------------------
+//buy max one share per day, sell any number you own, or make no transaction at all
+back-traverse:
+if(a[i]<maxv)
+  profit+=(maxv-a[i]);  
+maxv=max(maxv,a[i]);
+
+--------------------------------------------------------------------------------------------------------------------------------

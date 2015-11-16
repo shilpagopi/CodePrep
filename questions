@@ -51,9 +51,20 @@ maxv=max(maxv,a[i]);
 f(i)=f(i-1)+f(i-4);
 
 --------------------------------------------------------------------------------------------------------------------------------
+//pick 1,2 or 3 coins from top of stack
+//set basecases till n=1,2,3
+maxscore[i] // maximum score obtainable if a player starts here
+second[i]   //score obtainable by other player
 
+maxscore[i]= for moves j: 1 to 3 => max(pick j coins +second[j+1])
+second[i]=maxscore[j+1] for j giving best maxscore;
+
+Hint: if player1 picks till i+2th coin, player2 gets maxscore[i+3] and player1 gets sum till i+2 and second[i+3];
 
 --------------------------------------------------------------------------------------------------------------------------------
+//given coins, find the largest sum possible, lesser than or equal to K;
+//coins can be used multiple times
+do DP for exact sum till K; check columnwise backwards to locate the first possible answer. //OR maintain a maxsum variable
 
 --------------------------------------------------------------------------------------------------------------------------------
 

@@ -50,7 +50,7 @@ diagonalPrint(root.left, d + 1);
 diagonalPrint(root.right, d); 
  ```
 ### Diameter of Binary Tree
-Diameter of Tree:
+*Question-Pattern*: Return user-defined class, Post-compute
 ```java
 Result diameterOpt(Node root) 
 { 

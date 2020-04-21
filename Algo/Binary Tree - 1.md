@@ -22,11 +22,11 @@
    
  ```
  
- ### Special Traversals
+ ### Special Traversals of Binary Tree
  
  * Level order traversal in spiral form
  
- > Print levels from r->l and l-> alternatively
+ > Print levels from r->l and l->r alternatively
  
  ```
  # Modify in above code:
@@ -42,12 +42,28 @@
     - Use stack to reverse order
  
  * Diagonal Traversal
- ```
+ ```java
 diagHashmap.get(d).add(root.val);  
 
 // Traverse left child first - important
 diagonalPrint(root.left, d + 1); 
 diagonalPrint(root.right, d); 
  ```
+### Diameter of Binary Tree
+Diameter of Tree:
+```java
+Result diameterOpt(Node root) 
+{ 
+if (root == null) 
+return new Result(0,0);
+	  
+Result left = diameterOpt(root.left); 
+Result right = diameterOpt(root.right); 
 
+Result r = new Result(0,0);
+r.h = Math.max(left.h, right.h) + 1; 
+r.d = Math.max(r.h, Math.max(left.d, right.d));
+return r; 
+} 
+```
  

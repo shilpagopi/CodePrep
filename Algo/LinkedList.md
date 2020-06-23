@@ -24,10 +24,11 @@ d) recursively check first and last nodes
 > check end nodes same
 
 #### Find interesection node
-*QuestionPattern* : Stack, Tricky
+*QuestionPattern* : Tricky
 > Find using length diff.
 
 #### Detect start of loop
+*QuestionPattern* : Tricky  
 * Proceed to check for loop, i.e. If fast and slow pointers meet, there is a loop.
 * Freeze one pointer and increment the other pointer in single steps. When they both meet again, the count will give you the length of the loop (k).
 * Reset both pointers to the start of the link list, increment one pointer by k. Increment both pointers in single steps and when they meet again, it will be the start of the loop (this is same as finding the nth element from the end of the link list).

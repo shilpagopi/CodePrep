@@ -3,9 +3,9 @@
 add() – O(1)  
 get(index) – O(1)  
 add(index, element) – O(n)  
-remove() – O(n)   
+remove() – O(n)  
+contains() – O(n) 
 indexOf() – O(n)  
-contains() – O(n)  
 
 ### Linkedlist (internally doubly linked list)  
 All O(n) except add() – O(1)   

@@ -1,4 +1,21 @@
 # LinkedList
+#### Reverse LinkedList In Place Without Recursion
+```java
+public ListNode rev(ListNode head){
+    if(head==null || head.next==null)
+        return head;
+    ListNode curr = head.next,prev = head,temp;
+    prev.next = null;
+    
+    while(curr!=null){
+        temp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    return prev;
+}
+```
 
 #### Remove duplicates
 *QuestionPattern* : Hashset  

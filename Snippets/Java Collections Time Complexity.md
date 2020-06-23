@@ -4,7 +4,7 @@ add() – O(1)
 get(index) – O(1)  
 add(index, element) – O(n)  
 remove() – O(n)  
-contains() – O(n) 
+contains() – O(n)  
 indexOf() – O(n)  
 
 ### Linkedlist (internally doubly linked list)  

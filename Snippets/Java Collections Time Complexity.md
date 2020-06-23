@@ -1,10 +1,10 @@
 # Java Collections Time Complexity
 ### ArrayList
-add() – O(1)    
+add() – O(1)  
 get(index) – O(1)  
 add(index, element) – O(n)  
 remove() – O(n)   
-indexOf() – O(n)   
+indexOf() – O(n)  
 contains() – O(n)  
 
 ### Linkedlist (internally doubly linked list)  

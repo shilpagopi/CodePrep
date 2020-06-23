@@ -19,12 +19,13 @@ b) reverse half of the list and compare
 c) insert first half into stack, and check, or  
 d) recursively check first and last nodes  
 ```java
-    bool check(ListNode node) {
-        if (node == NULL) return true;
-        bool isPal = check(node->next) & (temp->val == node->val);
-        temp = temp->next;
-        return isPal;
-    }
+ListNode temo = head;
+bool check(ListNode node) {
+    if (node == NULL) return true;
+    bool isPal = check(node->next) & (temp->val == node->val);
+    temp = temp->next;
+    return isPal;
+}
 ```
 
 #### Check for intersection

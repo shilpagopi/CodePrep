@@ -1,0 +1,35 @@
+fun main() {
+    // Declaring variables
+    val a:Int = 3
+    val str:String = "\nHi"
+    
+    println("$str")
+    println("Hello, world!!!")
+    
+    // Declaring Lists, HashMaps, HashSets
+    val arr:IntArray = intArrayOf(1, 2, 3, 4, 5)
+    val numbers: MutableList<Int> = mutableListOf(1, 2, 3)
+    println(arr[2])
+    println(numbers)
+    
+    val testMap = hashMapOf("foo" to 1, "bar" to 2)
+   	println(testMap["foo"])  // prints "1"
+    println(testMap)
+    
+    val mySet = hashSetOf("a", "b", "c", "c")
+    println("My Set Values are "+ mySet)
+    
+    // Switch statement
+    val x:Int = 3
+    when (x) {
+       1,2 -> print(" Value of X either 1,2")
+       3 -> print("X is 3")
+       else -> { // Note the block
+          print("x is neither 1 nor 2")
+       }
+    }
+    
+    // Loop    
+    for (j in 1..4) 
+   		print(j) // prints "1234"
+}

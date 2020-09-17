@@ -1,16 +1,15 @@
 # Java Collections Functions
 ### ArrayList
-ls.add()  
-ls.add(index,element)  
-ls.get(index)  
-ls.contains(element)  
-ls.remove(element)  
-ls.remove(index)  
-ls.indexOf(element) - first element  
-ls.lastIndexOf(element)  
-ls.size()  
-ls.clear()  
-ls.remove(index)  
+alist.add()  
+alist.add(index,element)  
+alist.get(index)  
+alist.contains(element)  
+alist.remove(element)  
+alist.remove(index)  
+alist.indexOf(element) - first element  
+alist.lastIndexOf(element)  
+alist.size()  
+alist.clear()  
 
 ##### Implementation details:
 * Resizable array:grows and shrinks
@@ -19,10 +18,22 @@ ls.remove(index)
 * Not synchronized
 
 ### LinkedList
-ls.addFirst(element)  
+LinkedList<String> ls = new LinkedList<String>()
+ls.addFirst(element) or ls.add()
 ls.addLast(element)  
-ls.peek() retrieves head without removal  
-ls.remove() retrieves and removes head  
+  
+ls.set(index, element)
+ls.add(index,element) 
+  
+ls.peek() //retrieves head without removal    
+ls.get(index)
+ls.indexOf(element)
+ls.lastIndexOf(element)
+ls.contains(element)
+
+ls.remove() or ls.removeFirst(); //retrieves and removes head  
+ls.removeLast()
+ls.remove(index)
 
 ##### Implementation details:
 * Non contiguous

@@ -18,22 +18,22 @@ alist.clear()
 * Not synchronized
 
 ### LinkedList
-LinkedList<String> ls = new LinkedList<String>()
-ls.addFirst(element) or ls.add()
-ls.addLast(element)  
+LinkedList<String> ls = new LinkedList<String>()  
+ls.addFirst(element) or ls.add()  
+ls.addLast(element)    
   
-ls.set(index, element)
-ls.add(index,element) 
+ls.set(index, element)  
+ls.add(index,element)   
   
 ls.peek() //retrieves head without removal    
-ls.get(index)
-ls.indexOf(element)
-ls.lastIndexOf(element)
-ls.contains(element)
+ls.get(index)  
+ls.indexOf(element)  
+ls.lastIndexOf(element)  
+ls.contains(element)  
 
 ls.remove() or ls.removeFirst(); //retrieves and removes head  
-ls.removeLast()
-ls.remove(index)
+ls.removeLast()  
+ls.remove(index)  
 
 ##### Implementation details:
 * Non contiguous

@@ -51,6 +51,7 @@
 	print(pq_name,"Comparing name:");
 	
 	PriorityQueue<Node> pq_priority = new PriorityQueue<Node>((x,y)->Integer.compare(x.year,y.year));
+	//for reversing, multiply with -1
 	pq_priority.add(a);
 	pq_priority.add(b);
 	print(pq_priority,"Comparing seniority:");

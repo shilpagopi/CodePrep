@@ -2,7 +2,7 @@
 
 ## Dijkstra's
 
-**_Keywords_: Greedy, Priority Heap, Shortest path from a single source vertex to all other vertices**
+**_Keywords_: Greedy, Priority Heap, Shortest path from a single source vertex to all other vertices, Go to nearest vertex and mark it covered**
 
 #### Implementation
 ```
@@ -26,7 +26,7 @@ relax edge(U,V):
 Time complexity: O(V LogV)
 
 ## Bellman–Ford 
-**_Keywords_: Relax all E for |V|-1 times, Shortest path from a single source vertex to all other vertices**
+**_Keywords_: Relax all E for |V|-1 times, Shortest path from a single source vertex to all other vertices, Dis[v] array - relax over all E.**
 
 #### Implementation
 ```
@@ -54,7 +54,7 @@ Time complexity: O(V.E)
 
 ## Floyd Warshall
 
-**_Keywords_: 3 loops over V, All sources to all other vertices**
+**_Keywords_: 3 loops over V, All sources to all other vertices, dis[u][v] matrix with k intermediate vertices**
 
 #### Implementation
 ```

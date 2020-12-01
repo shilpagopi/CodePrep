@@ -36,7 +36,7 @@ b) reverse half of the list and compare
 c) insert first half into stack, and check, or  
 d) recursively check first and last nodes  
 ```java
-ListNode temo = head;
+ListNode temp = head;
 bool check(ListNode node) {
     if (node == NULL) return true;
     bool isPal = check(node->next) & (temp->val == node->val);
@@ -58,3 +58,9 @@ bool check(ListNode node) {
 * Proceed to check for loop, i.e. If fast and slow pointers meet, there is a loop.
 * Freeze one pointer and increment the other pointer in single steps. When they both meet again, the count will give you the length of the loop (k).
 * Reset both pointers to the start of the link list, increment one pointer by k. Increment both pointers in single steps and when they meet again, it will be the start of the loop (this is same as finding the nth element from the end of the link list).
+
+#### Deep Copy of linked list with arbitrary pointer
+Each node has two pointers - regular next pointer and arbitrary_pointer to any node in the linked list.
+* First pass: Create new first node in between first and second nodes. Repeat similarly for other nodes.
+* Second pass: Update FirstNodeCopy.arbit = FirstNode.arbit.next;  //arbit ptrs for copyList are set
+* Third Pass: Take two pointers starting at FirstNode and FirstNodeCopy, and update next ptrs as next to next.

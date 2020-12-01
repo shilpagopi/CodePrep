@@ -62,7 +62,7 @@ Result right = diameterOpt(root.right);
 
 Result r = new Result(0,0);
 r.h = Math.max(left.h, right.h) + 1; 
-r.d = Math.max(r.h, Math.max(left.d, right.d));
+r.d = Math.max(left.h + right.h + 1, Math.max(left.d, right.d));
 return r; 
 } 
 ```

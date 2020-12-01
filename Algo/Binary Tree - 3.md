@@ -1,7 +1,7 @@
 # Binary Tree - 3
 
 #### Serialization
-*Question-Pattern*: Tricky
+*Question-Pattern*: **Update/Construct whole tree and return updated tree's root** 
 * Binary Search Trees: only preorder or postorder traversal is sufficient to store structure information.
 * Complete Binary Tree: level order traversal is sufficient to store the tree. 
 * Full Tree: Store preorder traversal and store a bit with every node to indicate whether the node is an internal node or a leaf node.

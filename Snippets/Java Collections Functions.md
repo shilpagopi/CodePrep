@@ -19,11 +19,11 @@ alist.clear()
 
 ### LinkedList
 LinkedList<String> ls = new LinkedList<String>()  
-ls.addFirst(element) or ls.add()  
-ls.addLast(element)    
+ls.addFirst(element) 
+ls.addLast(element) or ls.add()    
   
-ls.set(index, element)  
-ls.add(index,element)   
+ls.set(index, element)  // Resets earlier value at given index, invalid for index = ls.size()
+ls.add(index,element)   // Add works as insertion of new node, is valid for index = ls.size()
   
 ls.peek() //retrieves head without removal    
 ls.get(index)  
@@ -34,6 +34,8 @@ ls.contains(element)
 ls.remove() or ls.removeFirst(); //retrieves and removes head  
 ls.removeLast()  
 ls.remove(index)  
+arr.removeFirstOccurrence(element);
+arr.removeLastOccurrence(element);
 
 ##### Implementation details:
 * Non contiguous
@@ -41,6 +43,8 @@ ls.remove(index)
 ### Hashmap
 mp.containsKey(key)  
 mp.containsValue(val)  
+mp.replace(key,newValue); //blind replacement
+mp.replace(key,oldValue,newValue); //replaces only if oldValue matches
 
 ### LinkedHashMap: 
 ##### Implementation details:
@@ -50,5 +54,26 @@ mp.containsValue(val)
 ### TreeMap 
 tr.firstKey()  
 tr.lastKey()  
+tr.firstEntry().getValue()
+tr.containsKey(key) or tr.containsValue(value)
+tr.pollFirstEntry() or tr.pollLastEntry()
+tr.higherKey(key)
+tr.lowerKey(key)
+tr.replace(key,newValue); //blind replacement
+tr.replace(key,oldValue,newValue); //replaces only if oldValue matches
+
 ##### Implementation details:
 * Red-Black Trees
+
+### TreeSet
+arr.first()
+arr.last()
+arr.higher(element) // returns next higher element
+arr.lower(element) 
+
+arr.add(element)
+arr.remove(element)
+arr.contains(element)
+
+##### Implementation details:
+* Internally uses TreeMap

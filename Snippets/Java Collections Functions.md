@@ -43,8 +43,8 @@ arr.removeLastOccurrence(element);
 ### Hashmap
 mp.containsKey(key)  
 mp.containsValue(val)  
-mp.replace(key,newValue); //blind replacement
-mp.replace(key,oldValue,newValue); //replaces only if oldValue matches
+mp.replace(key,newValue); //blind replacement  
+mp.replace(key,oldValue,newValue); //replaces only if oldValue matches  
 
 ### LinkedHashMap: 
 ##### Implementation details:
@@ -54,26 +54,26 @@ mp.replace(key,oldValue,newValue); //replaces only if oldValue matches
 ### TreeMap 
 tr.firstKey()  
 tr.lastKey()  
-tr.firstEntry().getValue()
-tr.containsKey(key) or tr.containsValue(value)
-tr.pollFirstEntry() or tr.pollLastEntry()
-tr.higherKey(key)
-tr.lowerKey(key)
-tr.replace(key,newValue); //blind replacement
-tr.replace(key,oldValue,newValue); //replaces only if oldValue matches
+tr.firstEntry().getValue()  
+tr.containsKey(key) or tr.containsValue(value)  
+tr.pollFirstEntry() or tr.pollLastEntry()  
+tr.higherKey(key)  
+tr.lowerKey(key)  
+tr.replace(key,newValue); //blind replacement  
+tr.replace(key,oldValue,newValue); //replaces only if oldValue matches  
 
 ##### Implementation details:
 * Red-Black Trees
 
 ### TreeSet
-arr.first()
-arr.last()
-arr.higher(element) // returns next higher element
-arr.lower(element) 
+arr.first()  
+arr.last()  
+arr.higher(element) // returns next higher element  
+arr.lower(element)  
 
-arr.add(element)
-arr.remove(element)
-arr.contains(element)
+arr.add(element)  
+arr.remove(element)  
+arr.contains(element)  
 
 ##### Implementation details:
-* Internally uses TreeMap
+* Internally uses TreeMap  

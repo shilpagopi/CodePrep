@@ -1,5 +1,6 @@
 # Overriding Hashcode and Equals for User defined classes
 ```java
+class Emp implements Comparable<Emp>{
     @Override
     public boolean equals(Object obj){
         if(obj==null)
@@ -19,4 +20,13 @@
         result = prime * result + Integer.hashCode(id);
         return result;
     }
+    
+    @Override
+    public int compareTo(Emp e){
+        int i = Integer.compare(id,e.id);
+        if (i!=0)
+            return i;
+        return company.compareTo(e.company);
+    }
+ }
 ```

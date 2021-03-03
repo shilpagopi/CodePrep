@@ -18,6 +18,14 @@ class Student implements Comparable<Student> {
   }
   
 public class Main {
+
+    // Sort students by name length
+    Comparator<Student> nameComparator = new Comparator<Student>() {
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.name.length() - s2.name.length();
+    }
+    };
   
   public static void main(String[] args) {
         Student s1 = new Student(1, "C");
@@ -32,6 +40,8 @@ public class Main {
             Student s = pq.poll();
             System.out.println(s.age + s.name);
         }
+        
+        PriorityQueue<Student> pq_alternate = new PriorityQueue<>(nameComparator);
   }
 }
 

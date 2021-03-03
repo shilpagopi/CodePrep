@@ -11,22 +11,17 @@ Insert at Index | alist.**add**(i,v)| ll.add(i,v) | --|--|--|
 **Edit**|
 Replace at Index | alist.**set**(i,newVal)|ll.set(i,newVal)|map.**replace**(k,newVal);  map.replace(k,oldVal,newVal);|tmap.replace(k,newVal);  tmap.replace(k,oldVal,newVal);|--|
 **Search**|
-Contains v |alist.**contains**(v)|ll.contains(v)|map.**containsValue**(v)|tmap.containsValue(v)|tset.contains(v)|
-Contains k |--|--|map.**containsKey**(k)|tmap.containsKey(k)|--|
-Search First Occurrence | alist.**indexOf**(v) | ll.indexOf(element)|--|--|--|
-Search Last Occurrence | alist.**lastIndexOf**(v)| ll.lastIndexOf(element)|--|--|--|
+Contains k or v |alist.**contains**(v)|ll.contains(v)| map.**containsKey**(k)  map.**containsValue**(v)|tmap.containsKey(k)  tmap.containsValue(v)|tset.contains(v)|
+Search First/Last Occurrence | alist.**indexOf**(v)   alist.**lastIndexOf**(v) | ll.indexOf(element)  ll.lastIndexOf(element)|--|--|--|
 **Deletion**|
-Remove First| --|ll.**removeFirst**()  ll.**poll**()|--|tmap.**pollFirstEntry**()|tset.**pollFirst**()|
-Remove Last|--|ll.**removeLast**()|--|tmap.pollLastEntry()|tset.pollLast()|
+Remove First/Last| --|ll.**removeFirst**() or ll.**poll**()  ll.**removeLast**()|--|tmap.**pollFirstEntry**()  tmap.pollLastEntry()|tset.**pollFirst**()  tset.pollLast()|
 Remove at index | alist.remove(i)|ll.remove(i)|map.remove(k)|tmap.remove(k)|--|
 Remove element | alist.remove(v)|ll.**remove**((Object)obj)|--|--|--|
 **Retrieval**|
 Fetch using k or i | alist.**get**(i)|ll.get(i)|map.get(k)|tmap.get(k)|--|
-Fetch First| -- | ll.**getFirst**()  ll.**peek**() | --| tmap.**firstKey**()|tset.**first**()|
-Fetch Last | -- | ll.**getLast**() | -- | tmap.lastKey()|tset.last()|
+Fetch First/Last| -- | ll.**getFirst**() or ll.**peek**()  ll.**getLast**() | --| tmap.**firstKey**()  tmap.lastKey()|tset.**first**()  tset.last()|
 **Extras**
-Higher/Lower Key | --|--|--|tmap.higherKey(k)  tmap.lowerKey(k)|tset.higher(v)  tset.lower(v)|
-
+Higher/Lower Key | --|--|--|tmap.**higherKey**(k)  tmap.**lowerKey**(k)|tset.**higher**(v)  tset.**lower**(v)|
 
 ### ArrayList
 alist.add()  

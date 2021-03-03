@@ -1,7 +1,24 @@
 # Java Collections Functions
+
+### Functions
+Functionality | ArrayList | LinkedList | HashMap | TreeMap | TreeSet |
+--|--|--|--|--|--|
+**Insertion**|
+Insert| --| --| map.**put**(k,v)|tmap.put(k,v)|treeset.add(v)|
+Insert at Start | -- | ll.**addFirst**(v)| --|--|--|
+Insert at End | alist.add() | ll.addLast() | --|--|--|
+Insert at Index | alist.**add**(i,v)| ll.add(i,v) | --|--|--|
+**Edit**|
+Replace at Index | alist.**set**(i,newVal)|ll.set(i,newVal)|map.**replace**(k,newVal);  map.replace(k,oldVal,newVal);|tmap.replace(k,newVal);  tmap.replace(k,oldVal,newVal);|--|
+**Deletion**|
+Remove First| --|ll.**removeFirst**()|--|tmap.**pollFirstEntry**()|tset.**pollFirst**()|
+
+
+
 ### ArrayList
 alist.add()  
-alist.add(index,element)  
+alist.add(index,element) 
+alist.set(index,element) //replaces existing element  
 alist.get(index)  
 alist.contains(element)  
 alist.remove(element)  
@@ -18,22 +35,22 @@ alist.clear()
 * Not synchronized
 
 ### LinkedList
-LinkedList<String> ls = new LinkedList<String>()  
-ls.addFirst(element) 
-ls.addLast(element) or ls.add()    
+LinkedList<String> ll = new LinkedList<String>()  
+ll.addFirst(element) 
+ll.addLast(element) or ll.add()    
   
-ls.set(index, element)  // Resets earlier value at given index, invalid for index = ls.size()
-ls.add(index,element)   // Add works as insertion of new node, is valid for index = ls.size()
+ll.set(index, element)  // Resets earlier value at given index, invalid for index = ls.size()
+ll.add(index,element)   // Add works as insertion of new node, is valid for index = ls.size()
   
-ls.peek() //retrieves head without removal    
-ls.get(index)  
-ls.indexOf(element)  
-ls.lastIndexOf(element)  
-ls.contains(element)  
+ll.peek() //retrieves head without removal    
+ll.get(index)  
+ll.indexOf(element)  
+ll.lastIndexOf(element)  
+ll.contains(element)  
 
-ls.remove() or ls.removeFirst(); //retrieves and removes head  
-ls.removeLast()  
-ls.remove(index)  
+ll.remove() or ll.removeFirst(); //retrieves and removes head  
+ll.removeLast()  
+ll.remove(index)  
 arr.removeFirstOccurrence(element);
 arr.removeLastOccurrence(element);
 

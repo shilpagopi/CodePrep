@@ -16,7 +16,7 @@ Search First/Last Occurrence | alist.**indexOf**(v)   alist.**lastIndexOf**(v) |
 **Deletion**|
 Remove First/Last| --|ll.**removeFirst**() or ll.**poll**()  ll.**removeLast**()|--|tmap.**pollFirstEntry**()  tmap.pollLastEntry()|tset.**pollFirst**()  tset.pollLast()|
 Remove at index | alist.remove(i)|ll.remove(i)|map.remove(k)|tmap.remove(k)|--|
-Remove element | alist.remove(v)|ll.**remove**((Object)obj)|--|--|--|
+Remove element | alist.remove(v)|ll.**remove**((Object)obj)|--|--|tset.remove(v)|
 **Retrieval**|
 Fetch using k or i | alist.**get**(i)|ll.get(i)|map.get(k)|tmap.get(k)|--|
 Fetch First/Last| -- | ll.**getFirst**() or ll.**peek**()  ll.**getLast**() | --| tmap.**firstKey**()  tmap.lastKey()|tset.**first**()  tset.last()|

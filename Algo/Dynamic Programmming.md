@@ -1,4 +1,4 @@
-# Dynamic PRogramming
+# Dynamic Programming
 
 #### Find min/max cost/path/sum to reach Target
 Choose minimum (maximum) path among all possible paths before the current state, then add value for the current state
@@ -40,4 +40,9 @@ for (int i = 0; i < n; ++i) {
    }
 }
 ```
+
+#### Decision Making
+An option to choose or ignore the current value  
+Draw option pathways and choose the best (eg. alternate house robber problem)  
+
 

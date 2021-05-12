@@ -6,6 +6,8 @@
 * poll()
 * remove()
 * contains()
+* Printing: while(!pq.isEmpty())
+        	System.out.println(pq.poll());
 
 #### Implementation
 ##### Basic class

@@ -46,6 +46,30 @@ Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
     }
 ```    
 
+#### Quick Sort
+```
+   private static int partition(int arr[],int l,int r){
+       int pivot = arr[r];
+       int low = l;   
+       for(int j=l;j<r;j++){
+           if(arr[j]<pivot){
+               swap(arr,low,j);
+               low++;
+           }
+       }
+       swap(arr,low,r);
+       return low;
+   }
+   
+   public static void quicksort(int arr[],int l,int r){
+       if(l<r) {
+       int p = partition(arr,l,r);
+       quicksort(arr,l,p-1);
+       quicksort(arr,p+1,r);
+       }
+   }
+```   
+
 #### Counting Sort
 * Array values are in the range 0 to k; Count in k-length array;
 * Print output one by one based on counting array.  

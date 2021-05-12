@@ -11,3 +11,21 @@ Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)
 Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
 Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	 
 Radix Sort|	Ω(nk)|	θ(nk)|	O(nk)
+
+#### Selection Sort
+```
+    void SelectionSort(int arr[])
+    {
+        int n = arr.length;  
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in unsorted array
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+  
+            swap(arr,mind_idx,i);
+        }
+    }
+```    

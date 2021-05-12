@@ -31,14 +31,6 @@
     }
   }
 ```
-##### Routine print function
-```java
-  static void print(PriorityQueue<Node> pq,String str){
-    System.out.println(str);
-    for(Node n:pq) System.out.println(n.name);
-  }
- ```
-
 
 #### Ways of providing Comparators
 

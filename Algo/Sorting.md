@@ -18,6 +18,16 @@ Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)
 Radix Sort||θ(digits * (n+base of decimal system))|	
 Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
 
+#### Merge Sort
+```
+   if (l < r) {
+        int m = (l + r) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        merge(arr, l, m, r);
+    }
+```
+
 #### Selection Sort
 ```
     void SelectionSort(int arr[])

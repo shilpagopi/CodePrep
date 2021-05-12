@@ -5,16 +5,16 @@
 * QuickSort and HeapSort are unstable (can be made stable)
 * Bubble Sort, Insertion Sort, Merge Sort, Count Sort, Radix Sort (depends on which algorithm for sub sorting)
 
-#### Time Complexities
-Sorting | Best| Average|Worst
---|--|--|--|
+#### Time & Space Complexities
+Sorting | Best| Average|Worst|Space
+--|--|--|--|--|
 Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)	 
-Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)	 
-Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2)	 
+Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place	 
+Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place 
 Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
 Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)	 
 Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
-Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	 
+Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)
 Radix Sort||θ(digits * (n+base of decimal system))|	
 Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
 

@@ -1,5 +1,9 @@
 # Sorting
+
+#### Stability of Sorting
 * A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.
+* QuickSort and HeapSort are unstable (can be made stable)
+* Bubble Sort, Insertion Sort, Merge Sort, Count Sort, Radix Sort (depends on which algorithm for sub sorting)
 
 #### Time Complexities
 Sorting | Best| Average|Worst

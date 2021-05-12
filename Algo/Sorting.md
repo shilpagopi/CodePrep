@@ -1,4 +1,5 @@
 # Sorting
+* A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.
 
 #### Time Complexities
 Sorting | Best| Average|Worst

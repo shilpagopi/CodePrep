@@ -11,7 +11,8 @@ Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))
 Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)	 
 Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
 Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	 
-Radix Sort|	Ω(nk)|	θ(nk)|	O(nk)
+Radix Sort||θ(digits * (n+base of decimal system))|	
+Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
 
 #### Selection Sort
 ```
@@ -30,3 +31,17 @@ Radix Sort|	Ω(nk)|	θ(nk)|	O(nk)
         }
     }
 ```    
+
+#### Counting Sort
+* Array values are in the range 0 to k; Count in k-length array;
+* Print output one by one based on counting array.  
+
+#### Radix Sort
+* Sort(counting sort) by unit digits first, then.. to higher significant digits.
+* Time complexity is O(n) to sort an array of integers from 1 to n^c if the numbers are represented in base n
+```
+    // Do counting sort for every digit. 
+    for (int exp = 1; maxNoInArray / exp > 0; exp *= 10)
+        countSort(arr, n, exp);
+    In countSort, find digit by (arr[i]/exp)%10.         
+```        

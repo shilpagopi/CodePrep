@@ -43,3 +43,8 @@ f(n) = f(n - 1) + (n - 1) * f(n - 2)
 When an element can be used only once, dp[i][j] = dp[i-1][j] || dp[i-1][j-A[i-1]]
 2 rows are sufficient
 ```
+
+#### Rod Cutting
+```
+1D : dp[i][j]=max(dp[i][j],dp[i][j-rodlen[j]]+price[rodlen[j]])
+```

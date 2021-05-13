@@ -41,4 +41,5 @@ f(n) = f(n - 1) + (n - 1) * f(n - 2)
 #### SubSet Sum 
 ```
 When an element can be used only once, dp[i][j] = dp[i-1][j] || dp[i-1][j-A[i-1]]
+2 rows are sufficient
 ```

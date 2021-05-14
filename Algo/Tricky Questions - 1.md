@@ -26,25 +26,15 @@ for (int j = 0; j < N; j++)
 
 #### Tiling Problem 
 Ways of placing 2 x 1 tiles on 2 x N board: count(n) = count(n-1) + count(n-2)
-
-#### Coin Change
-```
-for (int i=0; i<coins.size(); i++)
-    for (int j=coins[i]; j<=n; j++)
-            table[j] += table[j-S[i]];
- ```
  
-#### Pairing n friends
-```
-f(n) = f(n - 1) + (n - 1) * f(n - 2)
-``` 
 #### SubSet Sum 
 ```
 When an element can be used only once, dp[i][j] = dp[i-1][j] || dp[i-1][j-A[i-1]]
 2 rows are sufficient
 ```
 
-#### Rod Cutting
-```
-1D : dp[i][j]=max(dp[i][j],dp[i][j-rodlen[j]]+price[rodlen[j]])
-```
+#### Partition a set into two subsets such that the difference of subset sums is minimum
+s1 + s2 = TotalSum; the idea is find a feasible subset with sum closest to TotalSum/2.
+
+
+

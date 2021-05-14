@@ -23,6 +23,12 @@ Fetch First/Last| -- | ll.**getFirst**() or ll.**peek**()  ll.**getLast**() | --
 **Extras**
 Higher/Lower Key | --|--|--|tmap.**higherKey**(k)  tmap.**lowerKey**(k)|tset.**higher**(v)  tset.**lower**(v)|
 
+### How to Sort
+```
+int arr[] = new int[n];
+Arrays.sort(arr);
+```
+
 ### ArrayList
 alist.add()  
 alist.add(index,element) 

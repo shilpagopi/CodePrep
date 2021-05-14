@@ -36,5 +36,14 @@ When an element can be used only once, dp[i][j] = dp[i-1][j] || dp[i-1][j-A[i-1]
 #### Partition a set into two subsets such that the difference of subset sums is minimum
 s1 + s2 = TotalSum; the idea is find a feasible subset with sum closest to TotalSum/2.
 
-
+#### Maximum Product Rod Cutting
+* You need to make atleast 1 cut
+* dp => max value attainable by atleast 1 cut
+* If n==0 || n==1, return 0;
+```
+for(int i = 1 to l):
+    for (int j = i to l):
+        dp[j]=max(dp[j],i*(j-i),i*dp[j-i])
+        dp is max of (without making a cut of length i, cut length i and not cuts in j-i, cut length i and cut length j-i)
+```
 

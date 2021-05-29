@@ -34,8 +34,9 @@ E can vary from O(1) to O(V^2)
 ```
 Time: O(V+E)  
 O(V+|E|) for directed and O(V+2|E|) for undirected  
-For disconnected graphs, check visited array in a wrapper loop
+For disconnected graphs, check visited array in a wrapper loop  
 Memory: BFS: O(b^d), DFS: O(bh), where b: branching factor, d: at distance d from root, h: height
+
 #### Recursive Implementation
 ```
 - mark start node visited and call DFS(start,visited)

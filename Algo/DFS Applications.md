@@ -63,3 +63,26 @@ Can be checked by 2-coloring or does not contain any odd cycle
         return true;
     }
 ``` 
+
+#### Check for cycles in directed graph
+*QuestionPattern*: Track ancestors in boolean array (sequence does not matter), DFS returns non-coid datatype
+* Back edge to parent or ancestor is a cycle. Edge to a previously visited node need not be a cycle.
+``` java
+    public static int isAcyclicDFS(Graph graph, int v, boolean[] discovered, boolean[] isAncestor)
+    {        
+        isAncestor[v]=true;
+        for (int i: graph.adjList.get(v))
+        {
+            if (!discovered[i]) {
+                discovered[i] = true;
+                if(!isAcyclicDFS(graph, i, discovered, isAncestor)
+                    return false;
+            }
+            else if (isAncestor[i]) { //backedge to ancestor
+                return false;
+            }
+        }
+        isAncestor[v]=false;
+        return true;
+    }
+``` 

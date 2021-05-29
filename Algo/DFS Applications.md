@@ -43,3 +43,23 @@ Can be checked by 2-coloring or does not contain any odd cycle
         return true;
     }
 ```    
+
+#### Check for cycles in undirected graph
+*QuestionPattern*: Pass parent indicator, DFS returns non-void datatype, no backedge other than parent
+``` java
+    public static int isAcyclicDFS(Graph graph, int v, boolean[] discovered, int parent)
+    {        
+        for (int i: graph.adjList.get(v))
+        {
+            if (!discovered[i]) {
+                discovered[i] = true;
+                if(!isAcyclicDFS(graph, i, discovered, v)
+                    return false;
+            }
+            else if (i != parent) {
+                return false;
+            }
+        }
+        return true;
+    }
+``` 

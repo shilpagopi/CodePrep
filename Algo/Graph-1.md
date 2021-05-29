@@ -22,7 +22,7 @@ E can vary from O(1) to O(V^2)
 ### BFS and DFS
 **_Keywords_: BFS - Queue, DFS - Stack, Visited**
 
-#### Implementation
+#### Iterative Implementation
 ```
 - create queue for BFS and stack for DFS.
 - mark start node visited and add to queue/stack
@@ -32,9 +32,19 @@ E can vary from O(1) to O(V^2)
           - if not visited:
 	    - mark visited and add to queue/stack
 ```
-Time: O(V+E)	
+Time: O(V+E)  
+O(V+|E|) for directed and O(V+2|E|) for undirected  
 For disconnected graphs, check visited array in a wrapper loop
-
+Memory: BFS: O(b^d), DFS: O(bh), where b: branching factor, d: at distance d from root, h: height
+#### Recursive Implementation
+```
+- mark start node visited and call DFS(start,visited)
+- DFS(node,visited):
+	- print node
+	- for all its adjacent nodes:
+          - if not visited:
+	    - mark visited and DFS(adj,visited)
+```
 ### Topological Sorting
 
 **_Keywords_: Dependencies, Stack**

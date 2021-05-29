@@ -1,9 +1,23 @@
 # Graph - 1 
 A Graph is a non-linear data structure consisting of nodes and edges.
 
+#### Specification questions: Directed? Cyclic? Weighted? Connected? Input format?
+
 ### Representations
 1. Adjacency Matrix : Space: O(V^2), Time: Edge accessing O(1)
 2. Adjacency List   : Space: O(V+E), worst case: O(V^2), Time - O(E)
+
+### Types
+* Undirected: Max E = V×(V-1)/2 (not valid for multigraph)
+	* Multiple graph (Multigraph): More than 1 undirected edge between two V allowed
+	* Simple graph (no loops? and no multilple edges between two V)
+* Directed graph (Digraph): Max E = V*(V-1) -> cyclic, acyclic(DAG)
+* Weighted/unweighted graph
+* Complete graph: All vertices are adjacent to each other. Maximum edges are present. E = V*(V-1)
+* Connected graph: No disconnected components: min E = V-1.
+* Connected graph w/o cycles: Tree
+* Graph without cycles: Forest
+E can vary from O(1) to O(V^2)
 
 ### BFS and DFS
 **_Keywords_: BFS - Queue, DFS - Stack, Visited**

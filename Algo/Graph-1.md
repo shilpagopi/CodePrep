@@ -17,6 +17,7 @@ A Graph is a non-linear data structure consisting of nodes and edges.
 * Connected graph: No disconnected components: min E = V-1.
 * Connected graph w/o cycles: Tree
 * Graph without cycles: Forest
+* Strongly connected: every vertex is reachable from every other vertex
 E can vary from O(1) to O(V^2)
 
 ### BFS and DFS

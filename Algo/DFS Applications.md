@@ -83,7 +83,7 @@ Can be checked by 2-coloring or does not contain any odd cycle
         }
 ```
 
-#### Check for cycles in directed graph
+#### Check for cycles in directed graph (isDAG)
 *QuestionPattern*: Track ancestors in boolean array (sequence does not matter), DFS returns non-coid datatype
 * Back edge to parent or ancestor is a cycle. Edge to a previously visited node need not be a cycle.
 ``` java
@@ -105,3 +105,16 @@ Can be checked by 2-coloring or does not contain any odd cycle
         return true;
     }
 ``` 
+#### Check for cycles in directed graph (isDAG)
+```java
+    // DO DFS, check for backedges
+    for (int u = 0; u < N; u++)
+    {
+        for (int v: graph.adjList[u])
+        {
+            if (departure[u] <= departure[v]) { //equality for self loop
+                return false;
+            }
+        }
+    }
+```

@@ -20,6 +20,14 @@ A Graph is a non-linear data structure consisting of nodes and edges.
 * Strongly connected: every vertex is reachable from every other vertex
 E can vary from O(1) to O(V^2)
 
+### Types of Edges
+* Tree edge (parent-child)/Forward edge (ancestor to child): arrival[u] < arrival[v], departure[u] > departure[v]
+* Backedge (child to ancestor: opp of forward edge): arrival[u] > arrival[v], departure[u] < departure[v]
+* Cross edge (node to non-ancestor): arrival[u] > arrival[v], departure[u] > departure[v] (Reach cousin? first, leave cousin first)
+
+* departure[u] < departure[v]: only for backedge
+* If arrival[u] > arrival[v], it can either be a cross edge (if v present in stack) or a back edge (v not present in stack)
+
 ### BFS and DFS
 **_Keywords_: BFS - Queue, DFS - Stack, Visited**
 

@@ -6,3 +6,4 @@
 * Steps: 
   * DFS from v: check all vertices visited. 
   * If v is reachable from all vertices, then on reversing the edges and doing bfs, all nodes should be visited.
+* Brute force: O(V * (V+E)) Alternative: O(V+E)

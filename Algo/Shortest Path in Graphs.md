@@ -23,7 +23,7 @@ relax edge(U,V):
 		dis[V]=u+w
 
 ```
-Time complexity: O(V LogV)
+Time complexity: O(E.logV) (Derived from  E * pop vertices from minHeap of size |E|: Elog(E) => Elog(V^2) => E.logV)
 
 ## Bellman–Ford 
 **_Keywords_: Relax all E for |V|-1 times, Shortest path from a single source vertex to all other vertices, Dis[v] array - relax over all E.**

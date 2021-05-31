@@ -2,7 +2,8 @@
 
 #### How to check for Strongly connected graph
 * Strongly connected means: all vertices should be reachable from every other vertices
-* Alternative check: All vertices should be reachable from v and v should be reachable from all vertices
+* Alternative check: All vertices should be reachable from v and v should be reachable from all vertices (2 DFS traversals)
+* Alternative check-2: Check if the graph is 2-edge connected, i.e., no bridges. (single DFS traversal)
 * Steps: 
   * DFS from v: check all vertices visited. 
   * If v is reachable from all vertices, then on reversing the edges and doing bfs, all nodes should be visited.

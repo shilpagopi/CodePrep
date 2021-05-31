@@ -1,4 +1,33 @@
 # Arrays
+
+*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum
+
+## Sum
+#### Sub-Arrays with zero sum
+*Question-Pattern* : Cumulative sum
+* Insert sum 0 at index -1
+* Cumulative sum in hashmap. Is any sum repeats, the sub-array in between is zero-sum
+
+#### Shortest subarray with sum greater than k
+*Question-Pattern* : Sliding Window
+```python
+start = 0
+end = 0
+while (end < n): 
+	while (curr_sum <= k and end < n): 
+		curr_sum += arr[end] 
+		end+= 1
+		
+	while (curr_sum > x and start < n): 
+		min_len = Math.min(end - start ,min_len)
+		curr_sum -= arr[start] 
+		start+= 1
+```
+#### Triplets in array with given sum
+*QuestionPattern* : Sort and start+end pointers
+* Sort array, pick each element e, look for Sum-e using two pointers
+
+
 ## Re-arrangement
 #### Move zeroes to end
 *QuestionPattern* : Swapping, Ignore remaining elements
@@ -49,20 +78,4 @@ for i in range(0, len(A)):
   
             if (A[i] != i) :
                 A[i] = -1; 
-```
-
-#### Shortest subarray with sum greater than k
-*Question-Pattern* : Sliding Window
-```python
-start = 0
-end = 0
-while (end < n): 
-	while (curr_sum <= k and end < n): 
-		curr_sum += arr[end] 
-		end+= 1
-		
-	while (curr_sum > x and start < n): 
-		min_len = Math.min(end - start ,min_len)
-		curr_sum -= arr[start] 
-		start+= 1
 ```

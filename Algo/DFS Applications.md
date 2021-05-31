@@ -63,6 +63,25 @@ Can be checked by 2-coloring or does not contain any odd cycle
         return true;
     }
 ``` 
+#### Check for cycles in undirected graph using Union-Find
+*QuestionPattern*: Union-Find initialize parent with Vi value
+
+```java
+        // Iterate for every edge (u, v)
+        for (int u = 1; u <= N; u++)
+        {
+            // Recur for all adjacent vertices
+            for (int v: graph.adjList.get(u))
+            {
+                int x = UnionFind.FindParent(u);
+                int y = UnionFind.FindParent(v);
+                if (x == y) 
+                    return true; //same parent => cycle  
+                else 
+                    UnionFind.Union(x, y);     
+            }
+        }
+```
 
 #### Check for cycles in directed graph
 *QuestionPattern*: Track ancestors in boolean array (sequence does not matter), DFS returns non-coid datatype

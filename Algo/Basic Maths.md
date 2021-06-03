@@ -34,3 +34,4 @@ public static void findPowerSet(int[] S, Deque<Integer> set, int n)
     findPowerSet(S, set, n - 1); //skip this element
 }
 ````    
+> Alternative approach: Consider binary representation of numbers till 2^n -1 and add elements corresponding to bits set.

@@ -1,12 +1,13 @@
 # Arrays
 
-*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum
+*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum, Replace 0 with -1
 
 ## Sum
 #### Sub-Arrays with zero sum
-*Question-Pattern* : Cumulative sum
+*Question-Pattern* : Cumulative sum, works for integers
 * Insert sum 0 at index -1
-* Cumulative sum in hashmap. Is any sum repeats, the sub-array in between is zero-sum
+* Cumulative sum in hashmap. Is any sum repeats, the sub-array in between is zero-sum  
+For any non-zero sum, say K, search for sum-K in the hashmap.
 
 #### Shortest subarray with sum greater than k
 *Question-Pattern* : Sliding Window
@@ -27,6 +28,12 @@ while (end < n):
 *QuestionPattern* : Sort and start+end pointers
 * Sort array, pick each element e, look for Sum-e using two pointers
 
+#### Max Length Subarray with equal number of 0's and 1's
+Replace 0 with -1, find max subarray with zero sum.
+
+## Product
+#### Max product of two elements
+Get Max(L1 * L2, S1 * S2) where L=>largest element, S=>smallest element.
 
 ## Re-arrangement
 #### Move zeroes to end

@@ -82,3 +82,22 @@ Number of ways of achieving target sum S by rolling n dice together:
             for (int k = 1; k <= 6 && k < j; k++)
                 table[i][j] += table[i-1][j-k];
 ```
+
+#### Count number of Strictly Increasing Subarrays 
+*QuestionPattern*: Answer is sum of values of DP cells
+```java
+int getCount(int arr[], int n)
+{
+    int count = 0; //answer
+    int len = 0; //number of arrays ending at previous index
+ 
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i - 1] < arr[i])       
+            count += (++len);
+        else 
+            len = 0; 
+    } 
+    return count;
+}
+```

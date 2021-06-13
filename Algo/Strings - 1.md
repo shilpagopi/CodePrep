@@ -1,6 +1,11 @@
 # Strings
-### Dynamic Programming
-* Longest common string between 2 strings
+> #### **Question-Patterns**  
+> * DP
+> * Rotation -> Concatenation
+> 
+
+#### Longest common string between 2 strings
+*Question-Pattern* : DP
 ```java
 init a[M+1][N+1] two dimensional matrix with [0]
 for i in [0,M):

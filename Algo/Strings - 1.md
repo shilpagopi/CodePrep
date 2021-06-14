@@ -2,7 +2,7 @@
 > #### **Question-Patterns**  
 > * DP
 > * Rotation -> Concatenation
-> 
+> * Trie
 
 #### Longest common string between 2 strings
 *Question-Pattern* : DP
@@ -19,3 +19,8 @@ O(N*M) instead of brute force (O(N*M^2)
 *Question-Pattern* : Rotation -> Concatenation
 Check if longest palindromic substring of S+S is of length n.
 Time: O(n^2), Space: O(n^2)
+
+#### Lexicographic sorting of strings, Find maximum occurring word from list of string
+*Question-Pattern* : Trie
+DFS or Preorder traversal of trie
+Time: O(N * M), Space: O(N * M) 

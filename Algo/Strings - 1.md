@@ -67,3 +67,13 @@ public static boolean isMatch(String str, int n, String pattern, int m, Map<Stri
 }
 ```
 Time: O(N * M), Space: O(N * M)
+
+#### Min Deletions to convert a String to Palindrome
+*QuestionPattern* : DP
+```java
+if (X[i] == X[j])
+    dp[i][j] = dp[i + 1][j - 1]
+else 
+    dp[i][j] = 1 + min(dp[i][j-1],dp[i-1][j])
+```
+           

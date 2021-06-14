@@ -47,3 +47,12 @@ for(int i = 1 to l):
         dp is max of (without making a cut of length i, cut length i and not cuts in j-i, cut length i and cut length j-i)
 ```
 
+### Generate n binary numbers
+*QuestionPattern* : BFS of binary tree with every node 0 and 1.
+```
+q.append('1')
+for i in range(n):
+    front = str(q.popleft())
+    q.append(front + '0')
+    q.append(front + '1')
+```

@@ -40,7 +40,7 @@ ListNode temp = head;
 bool check(ListNode node) {
     if (node == NULL) return true;
     bool isPal = check(node->next) & (temp->val == node->val);
-    temp = temp->next;
+    temp = temp->next; //temp after recursion will contain tail node
     return isPal;
 }
 ```

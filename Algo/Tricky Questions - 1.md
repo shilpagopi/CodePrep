@@ -56,3 +56,7 @@ for i in range(n):
     q.append(front + '0')
     q.append(front + '1')
 ```
+### Find correct order of alphabets in a given dictionary of ancient origin
+*QuestionPattern* : Topological Sort of DAG
+For every two adjacent words, consider an edge between first pair of mismatched characters
+Time: O(N.M)

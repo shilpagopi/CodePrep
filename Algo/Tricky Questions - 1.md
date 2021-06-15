@@ -60,3 +60,10 @@ for i in range(n):
 *QuestionPattern* : Topological Sort of DAG
 For every two adjacent words, consider an edge between first pair of mismatched characters
 Time: O(N.M)
+
+### Length of longest balanced parenthesis in a string
+*QuestionPattern* : Replacement using +/-1, hashmap
+1. Skip all )).. present at the start
+2. Use hashmap to store earliest index of cumulative sum
+3. Add 0 at -1th index
+4. Find cumulative sum

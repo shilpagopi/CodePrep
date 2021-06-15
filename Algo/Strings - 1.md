@@ -77,3 +77,18 @@ else
     dp[i][j] = 1 + min(dp[i][j-1],dp[i-1][j])
 ```
            
+#### Check palindrome in O(1) space
+*QuestionPattern* : Centering of palindromes
+Check for expand(str,i,i) and expand(i,i+1)
+```java
+public static boolean expand(String str, int low, int high)
+{
+    int len = str.length();
+    while (low >= 0 && high < len &&
+            (str.charAt(low) == str.charAt(high))) {
+        low--;
+        high++;
+    }
+    return low==-1 && high==len;
+}
+ ```

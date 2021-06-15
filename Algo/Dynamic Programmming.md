@@ -101,3 +101,11 @@ int getCount(int arr[], int n)
     return count;
 }
 ```
+#### Longest Palindromic Subsequence (Non-continuous)
+*QuestionPattern*: DP
+```
+if X[i]==X[j] 
+   dp[i][j]=dp[i+1][j-1]+2
+else 
+   dp[i][j] = max(dp[i-1][j],dp[i][j-1])
+```   

@@ -109,3 +109,13 @@ if X[i]==X[j]
 else 
    dp[i][j] = max(dp[i-1][j],dp[i][j-1])
 ```   
+### Count the number of times a pattern appears in a string as subsequence
+*QuestionPattern*: DP
+```
+T[i][j] = ((X[i] == Y[j]) ? T[i - 1][j - 1] : 0) + T[i - 1][j];
+```
+
+Alternative:   
+Eg. "sue" in "subsequence" 7 times.  
+Traverse "subsequence". Store in an array the number of sequences ending at each letter of pattern until current element.   
+If "e" is found, e_count += u_count

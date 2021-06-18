@@ -8,7 +8,7 @@
 #### Time & Space Complexities
 Sorting | Best| Average|Worst|Space
 --|--|--|--|--|
-Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)	 
+Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)|In-place 
 Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place	 
 Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place 
 Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
@@ -40,8 +40,8 @@ Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
             for (int j = i+1; j < n; j++)
                 if (arr[j] < arr[min_idx])
                     min_idx = j;
-  
-            swap(arr,mind_idx,i);
+            
+            swap(arr,min_idx,i);
         }
     }
 ```    

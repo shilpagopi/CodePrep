@@ -83,3 +83,10 @@ Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
         countSort(arr, n, exp);
     In countSort, find digit by (arr[i]/exp)%10.         
 ```        
+
+#### Heap Sort
+* Parent: (i-1)/2, Child: 2* i+1, 2* i+2
+* Heapify: Rearrange i, left, right; If rearranged, recursively call on swapped child.
+* Call heapify from n/2 to 0 and build maxHeap
+* for i in range(n-1,0): swap heap top with i-th element, reduce heap size by 1, heapify top. 
+* Time complexity: O(n log n), Space: O(1)

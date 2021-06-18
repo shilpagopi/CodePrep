@@ -16,7 +16,7 @@ Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)
 Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
 Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)
 Radix Sort||θ(digits * (n+base of decimal system))|	
-Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)
+Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)| k is the range of input
 
 #### Merge Sort
 ```

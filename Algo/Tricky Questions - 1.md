@@ -67,3 +67,32 @@ Time: O(N.M)
 2. Use hashmap to store earliest index of cumulative sum
 3. Add 0 at -1th index
 4. Find cumulative sum
+
+### Word segmentation
+*QuestionPattern*: Trie
+```java
+public static boolean wordBreak(Node head, String str)
+    {
+        boolean[] good = new boolean[str.length() + 1];
+        good[0] = true;        // base case
+ 
+        for (int i = 0; i < str.length(); i++)
+        {
+            if (good[i])
+            {
+                Node node = head;
+                for (int j = i; j < str.length(); j++)
+                {
+                    if (node == null) 
+                        break;
+                    node = node.next[str.charAt(j) - 'a'];
+                    if (node != null && node.exist) {
+                        good[j + 1] = true;
+                    }
+                }
+            }
+        }
+        return good[str.length()];
+    }
+```
+Time complexity: O(n.wmax), Space complexity: O(n+sum of all word lengths)

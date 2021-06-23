@@ -2,7 +2,7 @@
 #### GCD or HCF
 ```java
 static int gcd(int a, int b)
-{
+{   // 5 conditions
     if (a == 0)
       return b;
     if (b == 0)

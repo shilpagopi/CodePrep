@@ -17,7 +17,7 @@ static int gcd(int a, int b)
 }
 ```
 
-#### Generate PowerSet
+#### Generate PowerSet (Distinct)
 ```java
 public static void findPowerSet(int[] S, Deque<Integer> set, int n)
 {

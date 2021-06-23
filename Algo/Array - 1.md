@@ -68,6 +68,12 @@ for j in range(n):
 	if (arr[j] < 0): 
 		i += 1
 		arr[i], arr[j] = arr[j], arr[i] 
+		
+i = 0 if first elem should be positive, else i = 1;
+while (arr[i] < 0) and (j < n):
+	arr[i], arr[j] = arr[j], arr[i] 
+	i += 2     
+	j += 1
 ```
 
 #### Rearrange an array such that arr[i] = i, absent elements are -1:

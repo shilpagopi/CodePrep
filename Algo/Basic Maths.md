@@ -17,8 +17,9 @@ static int gcd(int a, int b)
 }
 ```
 
-#### Generate PowerSet (Distinct)
+#### Generate PowerSet
 ```java
+//Sort S if numbers are duplicated.  
 public static void findPowerSet(int[] S, Deque<Integer> set, int n)
 {
     if (n == 0)
@@ -31,7 +32,11 @@ public static void findPowerSet(int[] S, Deque<Integer> set, int n)
     findPowerSet(S, set, n - 1);
     set.removeLast();     // backtrack
 
+    // remove adjacent duplicate elements
+    while (n > 0 && S[n] == S[n - 1]) 
+        n--;
+
     findPowerSet(S, set, n - 1); //skip this element
 }
 ````    
-> Alternative approach: Consider binary representation of numbers till 2^n -1 and add elements corresponding to bits set.
+> Alternative approach: Consider binary representation of numbers till 2^n -1 and add elements corresponding to bits set, store outputs in HashSet

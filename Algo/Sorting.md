@@ -2,21 +2,20 @@
 
 #### Stability of Sorting
 * A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.
-* QuickSort and HeapSort are unstable (can be made stable)
-* Bubble Sort, Insertion Sort, Merge Sort, Count Sort, Radix Sort (depends on which algorithm for sub sorting)
+* Radix Sort (depends on which algorithm for sub sorting)
 
 #### Time & Space Complexities
-Sorting | Best| Average|Worst|Space
---|--|--|--|--|
-Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)|In-place 
-Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place	 
-Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place 
-Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
-Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)	 
-Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 
+Sorting | Best| Average|Worst|Space|Stable
+--|--|--|--|--|--|
+Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)|In-place|
+Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place|Stable
+Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place|Stable
+Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 |Unstable
+Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)   |Unstable 
+Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 |Stable
 Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)
 Radix Sort||θ(digits * (n+base of decimal system))|	
-Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)| k is the range of input
+Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)| k is the range of input|Stable
 
 #### Merge Sort
 ```

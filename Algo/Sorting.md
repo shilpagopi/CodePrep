@@ -3,6 +3,7 @@
 #### Stability of Sorting
 * A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.
 * Radix Sort (depends on which algorithm for sub sorting)
+* Selection sort is unstable, can be made stable. 
 
 #### Time & Space Complexities
 Sorting | Best| Average|Worst|Space|Stable

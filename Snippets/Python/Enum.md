@@ -16,7 +16,7 @@ class Seasons(Enum):
     AUTUMN = 3
     WINTER = 4
 ```
-### * names() and values() - returns enum names and values resp.
+### names() and values() - returns enum names and values resp.
 ```python
 print(Seasons.SPRING.name) => SPRING
 print(Seasons.SPRING.value) => 1
@@ -34,7 +34,7 @@ class Seasons(Enum):
 print(Seasons.SPRING.value[1])
 ```
 
-### * Constructors
+### Constructors
 How to create a variable based on enum value
 ```python
 class Squares(Enum):
@@ -44,5 +44,21 @@ class Squares(Enum):
     def __init__(self, value):
     	self.area = value*value
      
+print(Squares.BLUE.area)
+```
+
+Constructor variable list gets extended by default:
+```python
+from enum import Enum
+
+class Squares(Enum):
+    BLUE = 3, 'b'
+    RED = 2, 'r'
+    
+    def __init__(self, side, single_char):
+        self.area = side*side
+        self.c = single_char
+     
+print(Squares.BLUE.c)
 print(Squares.BLUE.area)
 ```

@@ -44,3 +44,23 @@ print(cherry == pineapple) =>False
 print(cherry < pineapple) =>True
 print(pineapple < blueberry)=>False
 ```
+
+# Hashing
+* hash() works for immutable objects liek var or tuple.
+* If we use this on a mutable object like list, set, dictionaries then it will generate an error.
+* Define hash functions for custom classes to maintain equality and hash-value consistencies, if used in dict or sets.
+
+```python
+class Fruit():
+    def __init__(self, name, size):
+        self.name = name 
+        self.size = size
+    
+    def __eq__(self, other):
+    	return isinstance(other,self.__class__) and self.size == other.size and self.name==other.name
+        
+    def __hash__(self):
+    	return hash((self.name,self.size))
+```
+
+

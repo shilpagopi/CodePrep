@@ -63,4 +63,16 @@ class Fruit():
     	return hash((self.name,self.size))
 ```
 
-
+# Printing custom object
+```python
+class Fruit():
+    def __init__(self, name, size):
+        self.name = name 
+        self.size = size
+        
+    def __repr__(self):  
+        return f"Name:{self.name}, Size:{self.size}"
+        
+cherry = Fruit("cherry","tiny")
+print(cherry)
+```

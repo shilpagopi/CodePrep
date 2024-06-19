@@ -1,4 +1,4 @@
-Functionality | List | Deque
+Functionality | List
 --|--
 **Insertion**|
 Insert| --| 
@@ -17,33 +17,29 @@ Remove element | ls.remove(val) (removes first occurrance)
 **Retrieval**|
 Fetch using k or i | ls[i]
 Fetch First/Last| ls[0], ls[-1] | 
-**Constructors**
+**Constructors**|
 Definition | ls = [1,2,"hi"] or ls = list(iterable)|
 **Extras**
 Higher/Lower Key | --|
 
 ## List
-ls1.extend(iterable) 
-newlist = [expression for item in iterable if condition == True] 
-ls.sort() 
-ls.sort(reverse=True) 
+ls1.extend(iterable) \
+newlist = [expression for item in iterable if condition == True] \
+ls.sort() \
+ls.sort(reverse=True) \
 ls.count(val)
-Lists can be used as stacks.
 
 ## Set
-set_union = set1.union(set2)
-set_union = set1 | set2
-set_intersection = set1.intersection(set2)
-set_intersection = set1 & set2
-set_difference = set1.difference(set2)
+set_union = set1.union(set2) \
+set_union = set1 | set2 \
+set_intersection = set1.intersection(set2)v
+set_intersection = set1 & set2 \
+set_difference = set1.difference(set2) \
 set_difference = set1 - set2
 
-# Print out the resulting difference
-print(names_difference)
-
 ## General Notes
-List: ordered, changeable, and allow duplicate values.
-Set : unordered, no duplicates, faster than lists to check for unique values
-Dict: no duplicates, Ordered in Python 3.6.0 and later versions
-Deque vs List: Access element - list O(1), deque O(n). Insert element at start: list O(n), deque O(1)
+List: ordered, changeable, and allow duplicate values, can be used as stacks \
+Set : unordered, no duplicates, faster than lists to check for unique values \
+Dict: no duplicates, Ordered in Python 3.6.0 and later versions \
+Deque vs List: Access element - list O(1), deque O(n). Insert element at start: list O(n), deque O(1) \
 Tuples: immutable, can be used as dictionary keys if all their elements are immutable, cannot be copied, occupy more memory than lists.

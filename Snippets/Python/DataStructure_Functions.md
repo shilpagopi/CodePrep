@@ -28,7 +28,18 @@ ls.sort(reverse=True)
 ls.count(val)
 Lists can be used as stacks.
 
+## Set
+set_union = set1.union(set2)
+set_union = set1 | set2
+set_intersection = set1.intersection(set2)
+set_intersection = set1 & set2
+set_difference = set1.difference(set2)
+set_difference = set1 - set2
+
+# Print out the resulting difference
+print(names_difference)
+
 ## General Notes
 List: ordered, changeable, and allow duplicate values.
-Set : unordered, no duplicates
-Dict: no duplicates
+Set : unordered, no duplicates, faster than lists to check for unique values
+Dict: no duplicates, Ordered in Python 3.6.0 and later versions

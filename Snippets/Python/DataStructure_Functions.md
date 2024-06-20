@@ -43,6 +43,14 @@ Ordered dict:
 from collections import OrderedDict
 od = OrderedDict()
 
+## Heapq (always a min heap)
+```python
+import heapq
+li = [5, 7, 9, 1, 3]
+heapq.heapify(li)
+heapq.heappush(li,4)
+print(heapq.heappop(li)) #smallest element
+```
 
 ## General Notes
 List: ordered, changeable, and allow duplicate values, can be used as stacks \

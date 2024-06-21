@@ -38,10 +38,28 @@ set_intersection = set1 & set2 \
 set_difference = set1.difference(set2) \
 set_difference = set1 - set2
 
-## Dict
-Ordered dict: 
+## Ordered Dict
+#### * popitem() * move_to_end()
+```python
 from collections import OrderedDict
 od = OrderedDict()
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+od['e'] = 5
+od['f'] = 6
+
+#od.pop('f')
+del od['f']
+    
+print(od.popitem()) ->('e', 5)
+print(od.popitem(last = False)) ->('a', 1)
+od.move_to_end('c')
+print(od) ->OrderedDict([('b', 2), ('d', 4), ('c', 3)])
+od.move_to_end('c', last= False)
+print(od) ->OrderedDict([('c', 3), ('b', 2), ('d', 4)])
+```
 
 ## Heapq (always a min heap)
 ```python

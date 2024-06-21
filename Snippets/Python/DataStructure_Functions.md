@@ -1,26 +1,26 @@
 Functionality | List | Set | Dict |Deque 
 --|--|--|--|--
 **Insertion**||||
-Insert| --| s.add(val)| dict[k]=v|
+Insert| --| s.add(val)| dict[k]=v|--
 Insert at Start||--|--|q.appendleft("A")
 Insert at End |ls.append(val)|--|--|q.append("A")
 Insert at Index | ls.insert(i, val)|--|--|q.insert(i, val)
 **Edit**||||
-Replace at Index | ls[i] = val||dict[k]=new_val|
+Replace at Index | ls[i] = val||dct[k]=new_val|q[i]=val #inefficient
 **Search**||||
-Contains k or v | val in ls|| k in dict|
-Search First/Last Occurrence | list.index(val[, start[, end]])| |--|
+Contains k or v | val in ls| val in s| k in dct|val in q
+Search First/Last Occurrence | list.index(val[, start[, end]])| |--|q.index(val[, start[, end]])
 Count|ls.count(val)|--|--|q.count(val)
 **Deletion**||||
-Remove First| ls.pop() Removes last|| del dict[key]|q.popleft()
-Remove Last | |||q.pop()
-Remove at index | ls.pop(i) or del ls[i]|--|--|
-Remove element | ls.remove(val) (removes first occurrance)|s.remove(val) #raises error if val not present. s.discard(val) - no error if absent| del dict[key]|q.remove(val) (removes first occurrance)
+Remove First|--|--| del dct[key]|q.popleft()
+Remove Last |ls.pop() Removes last|||q.pop()
+Remove at index | ls.pop(i) or del ls[i]|--|--|--
+Remove element(#raises error if val not present) | ls.remove(val) (removes first occurrance)|s.remove(val),  s.discard(val) - no error if absent| del dict[key]|q.remove(val) (removes first occurrance)
 **Retrieval**||||
-Fetch using k or i | ls[i]|||
-Fetch First/Last| ls[0], ls[-1] |||
+Fetch using k or i | ls[i]||dct[k]|--|q[i] #ineffifcient
+Fetch First/Last| ls[0], ls[-1] |||q[0], q[-1]
 **Constructors**||||
-Definition | ls = [1,2,"hi"] or ls = list(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|
+Definition | ls = [1,2,"hi"] or ls = list(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|q = deque() or q = deque(iterable)
 **Extras**||||
 Extra functions:|list comprehensions squares = [x**2 for x in ls]|s.update(iterable)||q.rotate(-3) #rotate 3 to left
 
@@ -64,11 +64,11 @@ print(od) ->OrderedDict([('c', 3), ('b', 2), ('d', 4)])
 
 ## Heapq (always a min heap)
 ```python
-import heapq
+from heapq import heapify, heappop, heappush
 li = [5, 7, 9, 1, 3]
-heapq.heapify(li)
-heapq.heappush(li,4)
-print(heapq.heappop(li)) #smallest element
+heapify(li)
+heappush(li,4)
+print(heappop(li)) #smallest element
 ```
 
 ## General Notes

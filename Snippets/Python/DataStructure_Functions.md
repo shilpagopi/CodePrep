@@ -1,28 +1,28 @@
-Functionality | List | Set | Dict |Deque 
+Functionality | List |Deque | Set | Dict 
 --|--|--|--|--
 **Insertion**||||
-Insert| --| s.add(val)| dict[k]=v|--
-Insert at Start||--|--|q.appendleft("A")
-Insert at End |ls.append(val)|--|--|q.append("A")
-Insert at Index | ls.insert(i, val)|--|--|q.insert(i, val)
+Insert| --|--| s.add(val)| dict[k]=v
+Insert at Start||q.appendleft(val)|--|--
+Insert at End |ls.append(val)|q.append(val)|--|--
+Insert at Index | ls.insert(i, val)|q.insert(i, val)|--|--
 **Edit**||||
-Replace at Index | ls[i] = val||dct[k]=new_val|q[i]=val #inefficient
+Replace at Index | ls[i] = val|q[i]=val #inefficient||dct[k]=new_val
 **Search**||||
-Contains k or v | val in ls| val in s| k in dct|val in q
-Search First/Last Occurrence | list.index(val[, start[, end]])| |--|q.index(val[, start[, end]])
-Count|ls.count(val)|--|--|q.count(val)
+Contains k or v | val in ls|val in q| val in s| k in dct
+Search First/Last Occurrence | list.index(val[, start[, end]])|q.index(val[, start[, end]])| |--
+Count|ls.count(val)|q.count(val)|--|--
 **Deletion**||||
-Remove First|--|--| del dct[key]|q.popleft()
-Remove Last |ls.pop() Removes last|||q.pop()
-Remove at index | ls.pop(i) or del ls[i]|--|--|--
-Remove element(#raises error if val not present) | ls.remove(val) (removes first occurrance)|s.remove(val),  s.discard(val) - no error if absent| del dict[key]|q.remove(val) (removes first occurrance)
+Remove First|--|q.popleft()|--| In ordered dict, od.popitem(last = False)
+Remove Last |ls.pop() Removes last|q.pop()||In ordered dict, od.popitem()
+Remove at index | ls.pop(i) or del ls[i]|--|--|del dict[key]
+Remove element(#raises error if val not present) | ls.remove(val) (removes first occurrance)|q.remove(val) (removes first occurrance)|s.remove(val),  s.discard(val) - no error if absent| --
 **Retrieval**||||
-Fetch using k or i | ls[i]||dct[k]|--|q[i] #ineffifcient
-Fetch First/Last| ls[0], ls[-1] |||q[0], q[-1]
+Fetch using k or i | ls[i]|q[i] #ineffifcient||dct[k]|--
+Fetch First/Last| ls[0], ls[-1] |q[0], q[-1]||
 **Constructors**||||
-Definition | ls = [1,2,"hi"] or ls = list(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|q = deque() or q = deque(iterable)
+Definition | ls = [1,2,"hi"] or ls = list(iterable)|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()
 **Extras**||||
-Extra functions:|list comprehensions squares = [x**2 for x in ls]|s.update(iterable)||q.rotate(-3) #rotate 3 to left
+Extra functions:|list comprehensions squares = [x**2 for x in ls]|q.rotate(-3) #rotate 3 to left|s.update(iterable)|
 
 ## List
 ls1.extend(iterable) \

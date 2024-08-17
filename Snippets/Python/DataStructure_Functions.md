@@ -30,6 +30,7 @@ newlist = [expression for item in iterable if condition == True] \
 ls.sort() \
 ls.sort(reverse=True) \
 ls.count(val)
+ls.reverse()
 
 ## Set
 set_union = set1.union(set2) \

@@ -6,6 +6,7 @@
 * parent node index: [tl, tr], kids: [tl,tm], [tm+1, tr] where tm = (tl+tr)//2
 
 ### Generic Recursive structure for Construction/Updation/Querying
+basic_args: v, tl, tr \
 extra_args:
 * querying: query range (l,r)
 * construction: base array a[]

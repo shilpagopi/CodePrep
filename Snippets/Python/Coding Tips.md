@@ -5,4 +5,5 @@
 * ord('a'),chr(97)
 * float('inf') for extreme values
 * Floor division operator: x // y: 5/2=2
+* Exponential: a_cube = a**3
 

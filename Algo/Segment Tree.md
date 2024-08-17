@@ -15,8 +15,10 @@ extra_args:
 def fun(v:tree_node_index, tl:tree_left, tr:tree_right, <extra_args>){
     if query_right<query_left:                        #in querying
         do pruning and return default value
+
     if tl==tr (#in construction/updation), or tl==l and tr==r (#in querying):    
         operate on tree[v]
+
     else:
         find mid, tm = (tl+tr)//2
 

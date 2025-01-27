@@ -5,6 +5,7 @@
 * ord('a'),chr(97)
 * float('inf') for extreme values
 * Floor division operator: x // y: 5/2=2, -5//2=-3
+* Ceil division operator: -(-x//2)
 * Exponential: a_cube = a**3
 * Modulo: 10^9+7 is close to 2^30 \
 ( a + b) % c = ( ( a % c ) + ( b % c ) ) % c \

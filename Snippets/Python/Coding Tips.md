@@ -25,4 +25,15 @@ def factorial( n) :
  
     return f 
 ```
+``` python
 
+# Taking input as a number
+number = int(input("Enter a number: "))
+
+# Taking input as a string
+string = input("Enter a string: ")
+
+# Taking input as a list of numbers
+numbers = input("Enter a list of numbers separated by spaces: ").split()
+numbers = [int(x) for x in numbers]
+```

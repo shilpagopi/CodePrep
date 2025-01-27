@@ -12,8 +12,34 @@
     }
 ```
 
+```python
+def search(val,l,r):
+    while l<=r:
+        m = (l+r)//2
+        if ls[m]==val:
+            return m
+        if val<ls[m]:
+            r = m-1
+        else:
+            l=m+1
+    return -1
+```
+
 ### Find position to insert an element using Binary Search
 * Find lesser element with largest index
+```python
+def pos_to_insert(val,l,r):
+    pos = -1
+    while l<=r:
+        m = (l+r)//2
+        if val<ls[m]:
+            r = m-1
+        else:
+            pos = m
+            l=m+1
+    return pos+1
+```
+
 ```
     private static int binarySearch(List<Integer> array, int target){
         int position = -1;

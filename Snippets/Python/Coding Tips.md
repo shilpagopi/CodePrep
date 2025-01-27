@@ -11,6 +11,7 @@
 ( a * b) % c = ( ( a % c ) * ( b % c ) ) % c \
 ( a – b) % c = ( ( a % c ) – ( b % c ) ) % c \
 Not valid for division
+* math.ceil(x), math.floor(x)
 
 ``` python
 def factorial( n) :

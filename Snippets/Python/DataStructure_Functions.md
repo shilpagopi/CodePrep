@@ -20,9 +20,9 @@ Remove element(#raises error if val not present) | ls.remove(val) (removes first
 Fetch using k or i | ls[i]|q[i] #ineffifcient||dct[k]|--
 Fetch First/Last| ls[0], ls[-1] |q[0], q[-1]||
 **Constructors**||||
-Definition | ls = [1,2,"hi"] or ls = list(iterable)|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()
+Definition | ls = [1,2,"hi"] or ls = list(iterable); arr = [[0] * 4 for i in range(4)]|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()
 **Extras**||||
-Extra functions:|list comprehensions squares = [x**2 for x in ls]|q.rotate(-3) #rotate 3 to left|s.update(iterable)|
+Extra functions:|list comprehensions squares = [x**2 for x in ls]; nums.reverse()  |q.rotate(-3) #rotate 3 to left|s.update(iterable)|popitem(),move_to_end()
 
 ## List
 ls1.extend(iterable) \
@@ -39,6 +39,20 @@ set_intersection = set1.intersection(set2)v
 set_intersection = set1 & set2 \
 set_difference = set1.difference(set2) \
 set_difference = set1 - set2
+
+## Dict
+Dict comprehension
+myMap = { i: 2*i for i in range(3) }
+
+Looping through maps
+for key in myMap:
+    print(key, myMap[key])
+
+for val in myMap.values():
+    print(val)
+
+for key, val in myMap.items():
+    print(key, val)
 
 ## Ordered Dict
 #### * popitem() * move_to_end()
@@ -70,6 +84,8 @@ li = [5, 7, 9, 1, 3]
 heapify(li)
 heappush(li,4)
 print(heappop(li)) #smallest element
+# Min is always at index 0
+print(li[0])
 ```
 
 ## General Notes

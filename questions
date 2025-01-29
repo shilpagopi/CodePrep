@@ -1,3 +1,6 @@
+// Search in Rotated Sorted Array
+Key: one half of the array (either the left or the right) will always be sorted. If the target value lies within its start-end range, then search only in that half. 
+Else, search in the other half.
 --------------------------------------------------------------------------------------------------------------------------------
 //string number addition
 handle same size cases

@@ -12,7 +12,7 @@
 ( a * b) % c = ( ( a % c ) * ( b % c ) ) % c \
 ( a – b) % c = ( ( a % c ) – ( b % c ) ) % c \
 Not valid for division
-* math.ceil(x), math.floor(x)
+* math.ceil(x), math.floor(x), math.pos(2,x), math.sqrt(x)
 
 ``` python
 def factorial( n) :
@@ -24,6 +24,15 @@ def factorial( n) :
                         # exceed 10^9+7 
  
     return f 
+```
+```python
+# Looping from i = 5 to i = 2
+for i in range(5, 1, -1):
+    print(i)
+```
+```python
+for n1, n2 in zip(nums1, nums2):
+    print(n1, n2)
 ```
 ``` python
 

@@ -66,4 +66,20 @@ r.d = Math.max(left.h + right.h + 1, Math.max(left.d, right.d));
 return r; 
 } 
 ```
- 
+
+### Get Next Leaf Function for a Binary Tree
+*Question-Pattern*: DFS
+```python
+def get_next_leaf(self,ls):
+while len(ls)>0:
+    node = ls.pop()
+    if node==None:
+	return None
+    if not node.left and not node.right:
+	return node.val
+    if node.right:
+	ls.append(node.right)
+    if node.left:
+	ls.append(node.left)
+return None
+ ```

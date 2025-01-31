@@ -15,15 +15,16 @@ For any non-zero sum, say K, search for sum-K in the hashmap.
 start = 0
 end = 0
 while (end < n): 
-	while (curr_sum <= k and end < n): 
+	while (curr_sum <= k and end < n): # Block to move end ptr
 		curr_sum += arr[end] 
 		end+= 1
 		
-	while (curr_sum > x and start < n): 
+	while (curr_sum > x and start < n): # Block to move start ptr
 		min_len = Math.min(end - start ,min_len)
 		curr_sum -= arr[start] 
 		start+= 1
 ```
+Alternate approach for fixed window length: first consider ls[:k] slice, then increment l and r pointers by 1 in a single loop.
 #### Triplets in array with given sum
 *QuestionPattern* : Sort and start+end pointers
 * Sort array, pick each element e, look for Sum-e using two pointers

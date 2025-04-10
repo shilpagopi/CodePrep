@@ -26,7 +26,7 @@ E can vary from O(1) to O(V^2)
 * Cross edge (node to non-ancestor): arrival[u] > arrival[v], departure[u] > departure[v] (Reach cousin? first, leave cousin first)
 
 * departure[u] < departure[v]: only for backedge
-* If arrival[u] > arrival[v], it can either be a cross edge (if v present in stack) or a back edge (v not present in stack)
+* If arrival[u] > arrival[v], (reaching an already seen node), it can either be a cross edge (if v present in stack, yet to be explored) or a back edge (v not present in stack, already been explored)
 
 ### BFS and DFS
 **_Keywords_: BFS - Queue, DFS - Stack, Visited**
@@ -36,7 +36,7 @@ E can vary from O(1) to O(V^2)
 - create queue for BFS and stack for DFS.
 - mark start node visited and add to queue/stack
 - in loop over queue/stack:
-	- pop from queue/stack. print.
+	- pop from queue/stack. print. (call DFS recursively here inorder to not load up the stack space with the entire tree)
 	- for all its adjacent nodes:
           - if not visited:
 	    - mark visited and add to queue/stack

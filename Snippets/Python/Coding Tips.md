@@ -4,6 +4,8 @@
 * Use enumerate: for i, val in enumerate(list):
 * ord('a'),chr(97)
 * float('inf'),float('-inf') for extreme values
+* Init 1d list: seen = [None] * 5 
+* Init 2d list: matrix =[[0]*cols] * rows
 * Floor division operator: x // y: 5/2=2, -5//2=-3
 * Ceil division operator: -(-x//2)
 * Exponential: a_cube = a**3

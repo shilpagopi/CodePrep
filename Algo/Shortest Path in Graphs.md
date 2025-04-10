@@ -107,6 +107,7 @@ Intuititon?: The maximum length shortest path from u to v could only be the one 
 init():
 	for each vertex V in G: dis[V] <- infinite
 	dis[S] <- 0
+        predecessors[V]=[None]*V
 
 for i in range(self.V-1):		
 	for each edge (U,V) in G:
@@ -116,6 +117,8 @@ relax edge(U,V):
 	u = dis[U], v = dis[V], w = edge_weight(U, V)
 	if u!= infinite && w!= infinite && u+w<v:
 		dis[V]=u+w
+                predecessors[v] = u
+
 ```
 
 Check for neg edges:

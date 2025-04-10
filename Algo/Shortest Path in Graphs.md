@@ -52,7 +52,7 @@ class Graph:
            )  # Get the node with the min distance
 
            if current_node in visited:
-               continue  # Skip already visited nodes
+               continue  # Skip already visited nodes, also do not reprocess redundant longer distances stored in the heap
 
            visited.add(current_node)  # Else, add the node to visited set
 
@@ -99,6 +99,8 @@ Time complexity: O(E.logV) (Derived from  E * pop vertices from minHeap of size 
 
 ## Bellman–Ford 
 **_Keywords_: Relax all E for |V|-1 times, Shortest path from a single source vertex to all other vertices, Dis[v] array - relax over all E.**
+Unlike the Dijkstra algorithm, the Bellman-Ford algorithm can handle negative edge weights, and it can also detect negative weight cycles.
+Intuititon?: The maximum length shortest path from u to v could only be the one passing through all other vertices, i.e, V-1 edges. 
 
 #### Implementation
 ```
@@ -106,7 +108,7 @@ init():
 	for each vertex V in G: dis[V] <- infinite
 	dis[S] <- 0
 
-for each vertex V in G:			
+for i in range(self.V-1):		
 	for each edge (U,V) in G:
 		relax edge(U,V)
 		   
@@ -119,8 +121,10 @@ relax edge(U,V):
 Check for neg edges:
 ```
 for each edge (U,V) in G:
-	relax edge(U,V)
-```  
+	relaxed_flag = relax edge(U,V)
+	if relaxed_flag:
+		print("Negative cycles detected")
+```
 		
 Time complexity: O(V.E)
 

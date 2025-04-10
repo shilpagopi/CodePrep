@@ -1,5 +1,6 @@
 # Graph - 1 
 A Graph is a non-linear data structure consisting of nodes and edges.
+Trackers: seen[], explored[], parent_node, adj_vertices, timings of seeing and exploration 
 
 #### Specification questions: Directed? Cyclic? Weighted? Connected? Input format?
 
@@ -54,6 +55,7 @@ Memory: BFS: O(b^d), DFS: O(bh), where b: branching factor, d: at distance d fro
 	- for all its adjacent nodes:
           - if not visited:
 	    - mark visited and DFS(adj,visited)
+        - do any rootnode computation post all dfs exploration of subtree
 ```
 ### Topological Sorting
 

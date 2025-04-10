@@ -36,10 +36,10 @@ E can vary from O(1) to O(V^2)
 - create queue for BFS and stack for DFS.
 - mark start node visited and add to queue/stack
 - in loop over queue/stack:
-	- pop from queue/stack. print. (call DFS recursively here inorder to not load up the stack space with the entire tree)
+	- pop from queue/stack. print. 
 	- for all its adjacent nodes:
           - if not visited:
-	    - mark visited and add to queue/stack
+	    - mark visited and add to queue/stack (call DFS recursively here inorder to not load up the stack space with the entire tree)
 ```
 Time: O(V+E)  
 O(V+|E|) for directed and O(V+2|E|) for undirected  

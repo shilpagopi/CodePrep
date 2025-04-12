@@ -1,4 +1,4 @@
-# DFS Applications
+# Graph DFS Applications
 
 ### Concepts
 * Arrival time: time when vertex is explored/visited the first time

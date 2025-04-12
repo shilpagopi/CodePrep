@@ -1,8 +1,10 @@
-# Graph DFS Applications
+# Graph - 2
 
-### Concepts
+### DFS Concepts
 * Arrival time: time when vertex is explored/visited the first time
 * Departure time: time when all eighbours are explored and we are about to backtrack
+* DP/Memoization in DFS: While going over adjacent nodes, store state in local temp variable/flag and mark final state at the end of exploring all adjacent nodes. Do all computation at root node after exploring all adj nodes.
+* If cycles are encountered, use seen and explored arrays and return/break out of process on encountering an adj node with seen=True, but explored = False.
 
 #### Arrival and Departure Time
 *QuestionPattern*: DFS returns non-void datatype
@@ -118,3 +120,8 @@ Can be checked by 2-coloring or does not contain any odd cycle
         }
     }
 ```
+
+#### Trimming leaf nodes like Topological Sort
+*QuestionPattern*: Trimming leaf nodes \
+Find root nodes of minimum height trees (MHTs) in an undirected graph without simple cycles \
+Trim leaf nodes like topological sort. The remaining one or two nodes are possible root nodes.

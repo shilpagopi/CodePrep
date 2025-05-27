@@ -12,7 +12,15 @@
   * Store Preorder traversal and a marker for NULL pointers
   * Store Preorder traversal, store a IsLeafBit with every node, a marker for null pointers
  N-ary tree: Store an ‘end of children’ ("\") marker with every node. 
-  
+
+```python
+        if not root:
+            return "(#)"
+        return f"({root.val},{self.serialize(root.left)},{self.serialize(root.right)})"
+        # Braces are important to prevent partial incorrect overlap.
+ ```
+
+ 
 ```java
 public void serialize(Node root, ArrayList<Integer> A) {
 	    if(root==null){

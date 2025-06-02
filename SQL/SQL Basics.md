@@ -1,4 +1,6 @@
 # SQL Basics
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/66f9ebbf-5d4e-4cb0-9b61-7ba6b216a0ea" />
+
 ### SQL Notes
 SELECT   
 UPDATE..SET  
@@ -35,6 +37,7 @@ Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.
 Subqueries must always be enclosed in parentheses ().
 For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/
 For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp
+ALTER TABLE.. ADD/DROP/RENAME/ALTER
 
 ###### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables
@@ -42,6 +45,12 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
 * FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
 * SELF JOIN (using two different aliases)
+
+###### Window Fuctions
+SQL window functions can be categorized into two primary types: aggregate window functions and ranking window functions. These two types serve different purposes but share a common ability to perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
+<img width="1022" alt="image" src="https://github.com/user-attachments/assets/56e88298-28d5-43d9-bf20-62074a41c8f8" />
+
+<img width="745" alt="image" src="https://github.com/user-attachments/assets/36c00815-2c63-4472-a80a-97a3afd8492f" />
 
 ###### UNION (SELECT..UNION SELECT)
 * The UNION operator is used to combine the result-set of two or more SELECT statements.
@@ -55,6 +64,10 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * Use WHERE Instead of HAVING
 * Limit Wildcards to the End of a Search Term (for making use of indices)
 * Performance monitoring tools: SQL Sentry (SolarWinds), SQL Profiler (Microsoft), SQL Index Manager (Red Gate), SQL Diagnostic Manager (IDERA)
+
+#### Constraints
+<img width="821" alt="image" src="https://github.com/user-attachments/assets/13d7dc81-0d07-4cbe-9aca-279f76b92bfa" />
+
 
 ### SQL Format Examples
 * SELECT CustomerName, City FROM Customers;
@@ -110,6 +123,18 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * SELECT OrderID, Quantity, CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30' WHEN Quantity = 30 THEN 'The quantity is 30' ELSE 'The quantity is under 30' END AS QuantityText FROM OrderDetails;
 * SELECT CustomerName, City, Country FROM Customers ORDER BY (CASE WHEN City IS NULL THEN Country ELSE City END);
 * SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0)) FROM Products;
+* CREATE TABLE Persons (PersonID int,LastName varchar(255));
+* CREATE TABLE TestTable AS SELECT customername, contactname FROM customers;
+* TRUNCATE TABLE table_name; #deletes only data, not table
+* ALTER TABLE Customers ADD Email varchar(255);
+* ALTER TABLE table_name DROP COLUMN Email;
+* ALTER TABLE table_name RENAME COLUMN old_name to new_name;
+* ALTER TABLE Persons ALTER COLUMN DateOfBirth year;
+* CREATE VIEW [Brazil Customers] AS SELECT CustomerName, ContactName FROM Customers WHERE Country = 'Brazil';
+* CREATE TABLE Persons (Age int, CHECK (Age>=18));
+* SELECT Name, Age, Department, Salary, AVG(Salary) OVER (PARTITION BY Department) AS Avg_Salary FROM employee
+* SELECT Name, Department, Salary, RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS emp_rank FROM employee;
+* SELECT Date, Sales, SUM(Sales) OVER(ORDER BY Date) AS cumulative_sales_till_date FROM sales_data;
 
 
 

@@ -1,22 +1,22 @@
 # SQL
 ### SQL Commands
-SELECT /
-UPDATE..SET/
-DELETE, DELETE FROM/
-GROUP BY
-ORDER BY
-HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions
-INSERT INTO /
-CREATE DATABASE /
-ALTER DATABASE /
-CREATE TABLE /
-ALTER TABLE /
-DROP TABLE /
-CREATE INDEX /
-DROP INDEX /
-TOP/LIMIT /
-IN /
-IN..SELECT /
+SELECT   
+UPDATE..SET  
+DELETE, DELETE FROM  
+GROUP BY  
+ORDER BY  
+HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions  
+INSERT INTO   
+CREATE DATABASE   
+ALTER DATABASE   
+CREATE TABLE   
+ALTER TABLE   
+DROP TABLE   
+CREATE INDEX   
+DROP INDEX   
+TOP/LIMIT   
+IN   
+IN..SELECT   
 CONCAT
 BETWEEN (both begin and end values inclusive, works for text and date values as well) /
 MIN(), MAX(), COUNT(), SUM(), AVG()  #Aggregate functions ignore null values (except for COUNT()) /

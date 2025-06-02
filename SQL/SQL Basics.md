@@ -16,6 +16,7 @@ DROP TABLE
 CREATE INDEX   
 DROP INDEX   
 TOP/LIMIT   
+IFNULL  
 IN   
 IN..SELECT 
 CASE WHEN..THEN..ELSE..END..AS #to create a new column based on conditions
@@ -33,6 +34,7 @@ For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-dat
 Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.
 Subqueries must always be enclosed in parentheses ().
 For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/
+For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp
 
 ###### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables
@@ -107,6 +109,7 @@ For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/
 * SELECT * INTO newtable FROM oldtable WHERE 1 = 0; #for schema copying
 * SELECT OrderID, Quantity, CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30' WHEN Quantity = 30 THEN 'The quantity is 30' ELSE 'The quantity is under 30' END AS QuantityText FROM OrderDetails;
 * SELECT CustomerName, City, Country FROM Customers ORDER BY (CASE WHEN City IS NULL THEN Country ELSE City END);
+* SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0)) FROM Products;
 
 
 

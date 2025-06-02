@@ -1,11 +1,12 @@
-# SQL
-### SQL Commands
+# SQL Basics
+### SQL Notes
 SELECT   
 UPDATE..SET  
 DELETE, DELETE FROM  
 GROUP BY  
-ORDER BY  
 HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions  
+ORDER BY
+GROUP BY, HAVING, ORDER BY
 INSERT INTO   
 CREATE DATABASE   
 ALTER DATABASE   
@@ -16,13 +17,22 @@ CREATE INDEX
 DROP INDEX   
 TOP/LIMIT   
 IN   
-IN..SELECT   
+IN..SELECT 
+CASE WHEN..THEN..ELSE..END..AS #to create a new column based on conditions
 CONCAT
+PIVOT
+UNPIVOT
 BETWEEN (both begin and end values inclusive, works for text and date values as well) /
 MIN(), MAX(), COUNT(), SUM(), AVG()  #Aggregate functions ignore null values (except for COUNT()) /
 AS (keyword is optional) /
+EXISTS operator returns TRUE if the subquery returns one or more records
 LIKE (The percent sign % represents zero, one, or multiple characters, The underscore sign _ represents one, single character) /
 <img width="662" alt="image" src="https://github.com/user-attachments/assets/d64f23b7-1079-4f72-aa7f-ca4023b7749d" />
+Comment formats: /* comments */  or --comments
+For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-database/
+Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.
+Subqueries must always be enclosed in parentheses ().
+For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/
 
 ###### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables
@@ -38,6 +48,11 @@ LIKE (The percent sign % represents zero, one, or multiple characters, The under
 * The columns in every SELECT statement must also be in the same order
 * The UNION operator selects only distinct values by default. For duplicate valaues, use "UNION ALL"
 
+#### Performance Tips
+* Use INNER JOIN Instead of WHERE for Joins
+* Use WHERE Instead of HAVING
+* Limit Wildcards to the End of a Search Term (for making use of indices)
+* Performance monitoring tools: SQL Sentry (SolarWinds), SQL Profiler (Microsoft), SQL Index Manager (Red Gate), SQL Diagnostic Manager (IDERA)
 
 ### SQL Format Examples
 * SELECT CustomerName, City FROM Customers;
@@ -84,5 +99,15 @@ LIKE (The percent sign % represents zero, one, or multiple characters, The under
 * SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
 * SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID GROUP BY ShipperName;
 * SELECT COUNT(CustomerID) as C, Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
+* SELECT PROGRAMMING, SCHOOL, COLLEGE FROM geeksforgeeks PIVOT (SUM(Price) FOR Course IN (SCHOOL, COLLEGE)) AS PivotTable
+* INSERT INTO Student1 SELECT * FROM Student2;
+* SELECT SupplierName FROM Suppliers WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID)
+* SELECT ProductName FROM Products WHERE ProductID (=, <>, !=, >, >=, <, or <=) ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+* SELECT * INTO CustomersBackup2017 FROM Customers where Year=='2025';
+* SELECT * INTO newtable FROM oldtable WHERE 1 = 0; #for schema copying
+* SELECT OrderID, Quantity, CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30' WHEN Quantity = 30 THEN 'The quantity is 30' ELSE 'The quantity is under 30' END AS QuantityText FROM OrderDetails;
+* SELECT CustomerName, City, Country FROM Customers ORDER BY (CASE WHEN City IS NULL THEN Country ELSE City END);
+
+
 
 

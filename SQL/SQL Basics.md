@@ -13,7 +13,7 @@ INSERT INTO
 CREATE DATABASE   
 ALTER DATABASE   
 CREATE TABLE   
-ALTER TABLE   
+ALTER TABLE.. ADD/DROP/RENAME/ALTER COLUMN colname #skip keyword COLUMN for add case
 DROP TABLE   
 CREATE INDEX   
 DROP INDEX   
@@ -30,26 +30,24 @@ MIN(), MAX(), COUNT(), SUM(), AVG()  #Aggregate functions ignore null values (ex
 AS (keyword is optional) /
 EXISTS operator returns TRUE if the subquery returns one or more records
 LIKE (The percent sign % represents zero, one, or multiple characters, The underscore sign _ represents one, single character) /
-<img width="662" alt="image" src="https://github.com/user-attachments/assets/d64f23b7-1079-4f72-aa7f-ca4023b7749d" />
-Comment formats: /* comments */  or --comments
-For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-database/
-Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.
-Subqueries must always be enclosed in parentheses ().
-For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/
-For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp
-ALTER TABLE.. ADD/DROP/RENAME/ALTER
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/d64f23b7-1079-4f72-aa7f-ca4023b7749d" />  
+Comment formats: /* comments */  or --comments  
+For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-database/  
+Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.  
+Subqueries must always be enclosed in parentheses ().  
+For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/  
+For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp  
 
-###### JOINS (t1 JOIN t2 ON)/
+##### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
 * RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
 * FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
 * SELF JOIN (using two different aliases)
 
-###### Window Fuctions
+##### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
 SQL window functions can be categorized into two primary types: aggregate window functions and ranking window functions. These two types serve different purposes but share a common ability to perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
 <img width="1022" alt="image" src="https://github.com/user-attachments/assets/56e88298-28d5-43d9-bf20-62074a41c8f8" />
-
 <img width="745" alt="image" src="https://github.com/user-attachments/assets/36c00815-2c63-4472-a80a-97a3afd8492f" />
 
 ###### UNION (SELECT..UNION SELECT)
@@ -67,7 +65,6 @@ SQL window functions can be categorized into two primary types: aggregate window
 
 #### Constraints
 <img width="821" alt="image" src="https://github.com/user-attachments/assets/13d7dc81-0d07-4cbe-9aca-279f76b92bfa" />
-
 
 ### SQL Format Examples
 * SELECT CustomerName, City FROM Customers;
@@ -91,6 +88,7 @@ SQL window functions can be categorized into two primary types: aggregate window
 * DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 * DELETE FROM Customers; #Table remains
 * DROP TABLE Customers;
+  
 * SELECT column_name(s) FROM table_name WHERE condition LIMIT number; (MYSQL syntax)
 * SELECT TOP 3 * FROM Customers; (SQL Server or MS Access syntax)
 * SELECT TOP 50 PERCENT * FROM Customers; (SQL Server or MS Access syntax)
@@ -99,6 +97,7 @@ SQL window functions can be categorized into two primary types: aggregate window
 * SELECT COUNT(*) AS [Number of records], CategoryID FROM Products GROUP BY CategoryID;
 * SELECT SUM(Quantity * 10) FROM OrderDetails;
 * SELECT SUM(Price * Quantity) FROM OrderDetails LEFT JOIN Products ON OrderDetails.ProductID = Products.ProductID;
+
 * SELECT * FROM Customers WHERE city LIKE 'L_nd__';
 * SELECT * FROM Customers WHERE CustomerName LIKE '[bsp]%' OR CustomerName LIKE '[a-f]%';
 * SELECT * FROM Customers WHERE CustomerID IN (SELECT CustomerID FROM Orders);
@@ -107,6 +106,7 @@ SQL window functions can be categorized into two primary types: aggregate window
 * SELECT o.OrderID, o.OrderDate, c.CustomerName FROM Customers AS c, Orders AS o WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
 * SELECT CustomerName, CONCAT(Address,', ',PostalCode) AS Address FROM Customers;
 * SELECT CustomerName, Address + ', ' + PostalCode AS Address FROM Customers;
+
 * SELECT ProductName, CategoryName FROM Products INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
 * SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName FROM ((Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID) INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
 * SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID <> B.CustomerID AND A.City = B.City; #Self-join
@@ -115,6 +115,7 @@ SQL window functions can be categorized into two primary types: aggregate window
 * SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID GROUP BY ShipperName;
 * SELECT COUNT(CustomerID) as C, Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
 * SELECT PROGRAMMING, SCHOOL, COLLEGE FROM geeksforgeeks PIVOT (SUM(Price) FOR Course IN (SCHOOL, COLLEGE)) AS PivotTable
+  
 * INSERT INTO Student1 SELECT * FROM Student2;
 * SELECT SupplierName FROM Suppliers WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID)
 * SELECT ProductName FROM Products WHERE ProductID (=, <>, !=, >, >=, <, or <=) ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
@@ -123,6 +124,7 @@ SQL window functions can be categorized into two primary types: aggregate window
 * SELECT OrderID, Quantity, CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30' WHEN Quantity = 30 THEN 'The quantity is 30' ELSE 'The quantity is under 30' END AS QuantityText FROM OrderDetails;
 * SELECT CustomerName, City, Country FROM Customers ORDER BY (CASE WHEN City IS NULL THEN Country ELSE City END);
 * SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0)) FROM Products;
+
 * CREATE TABLE Persons (PersonID int,LastName varchar(255));
 * CREATE TABLE TestTable AS SELECT customername, contactname FROM customers;
 * TRUNCATE TABLE table_name; #deletes only data, not table
@@ -132,10 +134,8 @@ SQL window functions can be categorized into two primary types: aggregate window
 * ALTER TABLE Persons ALTER COLUMN DateOfBirth year;
 * CREATE VIEW [Brazil Customers] AS SELECT CustomerName, ContactName FROM Customers WHERE Country = 'Brazil';
 * CREATE TABLE Persons (Age int, CHECK (Age>=18));
+  
 * SELECT Name, Age, Department, Salary, AVG(Salary) OVER (PARTITION BY Department) AS Avg_Salary FROM employee
 * SELECT Name, Department, Salary, RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS emp_rank FROM employee;
 * SELECT Date, Sales, SUM(Sales) OVER(ORDER BY Date) AS cumulative_sales_till_date FROM sales_data;
-
-
-
 

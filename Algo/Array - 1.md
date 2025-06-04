@@ -6,8 +6,9 @@
 #### Sub-Arrays with zero sum
 *Question-Pattern* : Cumulative sum, works for integers
 * Insert sum 0 at index -1
-* Cumulative sum in hashmap. Is any sum repeats, the sub-array in between is zero-sum  
-For any non-zero sum, say K, search for sum-K in the hashmap.
+* Cumulative sum in hashmap. Is any sum repeats, the sub-array in between is zero-sum
+* For any non-zero sum, say K, search for sum-K in the hashmap.  
+
 Naive brute force: Time:O(N3),Space:O(1); Most optimized: Time:O(N),Space:O(N)
 
 #### Shortest subarray of positive integers with sum greater than k
@@ -25,7 +26,7 @@ while (end < n):
 		curr_sum -= arr[start] 
 		start+= 1
 ```
-Alternate approach for fixed window length: first consider ls[:k] slice, then increment l and r pointers by 1 in a single loop.
+Alternate approach for fixed window length: first consider ls[:k] slice, then increment l and r pointers by 1 in a single loop.  
 Naive brute force: Time:O(N3),Space:O(1); Most optimized: Time:O(N),Space:O(1)
 
 #### Shortest subarray of integers with sum greater than k

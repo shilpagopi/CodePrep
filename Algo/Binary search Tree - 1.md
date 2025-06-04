@@ -64,3 +64,4 @@ public TreeNode deleteNode(TreeNode root, int key) {
 	return root;
 }
 ```
+Worst case: Time:O(N),Space:O(1); Most optimized(for balanced BST): Time:O(log N),Space:O(1)

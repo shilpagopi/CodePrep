@@ -3,7 +3,9 @@
 
 #### Tips
 * Remember Order: GROUP BY, HAVING, WINDOW, ORDER BY
-* Use SUM(CASE..WHEN..IF..ELSE..END) to count rows only belonging to a certain category set out of n categories (i.e. when using GROUP BY categories).  
+* Use SUM(CASE..WHEN..IF..ELSE..END) to count rows only belonging to a certain category set out of n categories (i.e. when using GROUP BY categories).
+* ON clause vs.WHERE clause: ON is to specify the conditions for joining the tables. Only the rows satisfying this condition are combined and included in the final result set, whereas the WHERE clause to filter records after the JOIN has been performed.
+* Implicit cross product join format: SELECT * FROM facebook, linkedin WHERE facebook.name = linkedin.name.
 
 #### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables

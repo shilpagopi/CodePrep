@@ -49,6 +49,29 @@ diagHashmap.get(d).add(root.val);
 diagonalPrint(root.left, d + 1); 
 diagonalPrint(root.right, d); 
  ```
+Time: O(N), Space: O(N)
+```python
+def diagonalTraversal_iterative(root):
+    if not root:
+        return []
+
+    result = []
+    queue = deque()
+    queue.append(root)
+
+    while queue:
+        current_node = queue.popleft()
+
+        # Traverse along the current diagonal (moving right)
+        while current_node:
+            result.append(current_node.val)
+            # If there's a left child, it starts a new diagonal, so enqueue it
+            if current_node.left:
+                queue.append(current_node.left)
+            current_node = current_node.right # Move to the right child for the same diagonal
+    return result
+```
+Time: O(N), Space: O(W) - where W is the widest diagonal to be stored in dq
 ### Diameter of Binary Tree
 *Question-Pattern*: Return user-defined class, Post-compute
 ```java

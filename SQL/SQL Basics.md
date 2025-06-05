@@ -48,14 +48,28 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 
 ##### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
 To perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
-* Aggregate: SUM(), AVG(), COUNT(), MAX(),MIN()
+<img width="870" alt="image" src="https://github.com/user-attachments/assets/dbf58fd2-4708-461d-882b-8b37c4d2d6fa" />
+Window frame extent: Eg. Use 5 PRECEDING
+<img width="626" alt="image" src="https://github.com/user-attachments/assets/e880acec-a326-4198-b2e3-26742afe6b1d" />
 
-* Ranking 
-* Value: FIRST_VALUE(), LAST_VALUE()
+* Aggregate: SUM(), AVG(), COUNT(), MAX(),MIN()
+  <img width="592" alt="image" src="https://github.com/user-attachments/assets/de680099-5d37-40ea-9c1a-e505c2f9fd7a" />
+
+* Ranking: requires an ORDER BY sub-clause
+<img width="911" alt="image" src="https://github.com/user-attachments/assets/c2d40296-c79d-4c60-b844-ba8c42e17817" />
+<img width="809" alt="image" src="https://github.com/user-attachments/assets/700cf5f9-b10c-4df1-8141-e2845d11392e" />
+
+<img width="552" alt="image" src="https://github.com/user-attachments/assets/1807d0c4-3194-4737-bf94-77d103a2aace" />
+* Value: FIRST_VALUE(), LAST_VALUE(),
+ <img width="711" alt="image" src="https://github.com/user-attachments/assets/2b875e47-7d02-4420-9df1-3200512d7e43" />
+
 * Lead/Lag: LEAD(), LAG()
-These 
-<img width="1022" alt="image" src="https://github.com/user-attachments/assets/56e88298-28d5-43d9-bf20-62074a41c8f8" />
-<img width="745" alt="image" src="https://github.com/user-attachments/assets/36c00815-2c63-4472-a80a-97a3afd8492f" />
+Syntax: LAG/LEAD(expression [,offset[,default_value]]) OVER(ORDER BY columns)
+Expression: the name of the column from which the value is retrieved  
+Offset: the number of rows to skip. Defaults to 1.  
+Default_value: the value to be returned if the value retrieved is null. Defaults to NULL.  
+Requires orderby clause  
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/93f5b43a-889f-453f-93a0-ee51b8dc8a6d" />
 
 ###### UNION (SELECT..UNION SELECT)
 * The UNION operator is used to combine the result-set of two or more SELECT statements.

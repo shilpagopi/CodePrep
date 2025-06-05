@@ -54,6 +54,12 @@ for val in myMap.values():
 for key, val in myMap.items():
     print(key, val)
 
+from collections import defaultdict  
+d = defaultdict(list) # []  
+d = defaultdict(str) # ""  
+d = defaultdict(int) # 0  
+d = defaultdict(lambda: "Not Present")  
+
 ## Ordered Dict
 #### * popitem() * move_to_end()
 ```python

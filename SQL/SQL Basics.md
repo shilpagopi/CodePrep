@@ -44,6 +44,21 @@ Default_value: the value to be returned if the value retrieved is null. Defaults
 Requires orderby clause  
 <img width="641" alt="image" src="https://github.com/user-attachments/assets/93f5b43a-889f-453f-93a0-ee51b8dc8a6d" />
 
+#### NULL Handling
+* Arithmetic Operations (+, -, *, /, %): the result is typically NULL.
+  Eg. 5 +/* NULL = NULL, NULL - NULL = NULL  
+* Comparison Operations (=, !=, <, >, <=, >=): Always results in UNKNOWN.
+  Eg. WHERE Commission = NULL; --> Returns 0 rows. Use Commission IS NULL or IS NOT NULL
+* Logical Operations (AND, OR, NOT): Use common sense  
+  Eg. TRUE AND UNKNOWN = UNKNOWN, FALSE AND UNKNOWN = FALSE, NOT UNKNOWN = UNKNOWN
+* Aggregate Functions (COUNT, SUM, AVG, MIN, MAX): Most by default, ignore NULL values  
+* ORDER BY Clause: NULLs are treated as either the smallest or largest values.
+  Eg. Can be controlled using NULLS FIRST or NULLS LAST: ORDER BY Commission ASC NULLS LAST;  
+* Special Functions:  
+  COALESCE(expression1, expression2, ...): Returns the first non-NULL expression in the list. Eg.COALESCE(Commission, 0)
+  ISNULL(expression, replacement_value): Use ISNULL or IFNULL or NVL
+  NULLIF(expression1, expression2): Returns NULL if expression1 equals expression2; else, returns expression1. Useful for preventing division by zero (e.g., value / NULLIF(divisor, 0)).
+
 #### UNION (SELECT..UNION SELECT)
 * The UNION operator is used to combine the result-set of two or more SELECT statements.
 * Every SELECT statement within UNION must have the same number of columns

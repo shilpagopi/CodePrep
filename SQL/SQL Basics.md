@@ -1,6 +1,9 @@
 # SQL Basics
 <img width="653" alt="image" src="https://github.com/user-attachments/assets/66f9ebbf-5d4e-4cb0-9b61-7ba6b216a0ea" />
-Remember Order: GROUP BY, HAVING, WINDOW, ORDER BY
+
+#### Tips
+* Remember Order: GROUP BY, HAVING, WINDOW, ORDER BY
+* Use SUM(CASE..WHEN..IF..ELSE..END) to count rows only belonging to a certain category set out of n categories (i.e. when using GROUP BY categories).  
 
 #### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables

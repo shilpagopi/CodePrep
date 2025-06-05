@@ -1,44 +1,8 @@
 # SQL Basics
 <img width="653" alt="image" src="https://github.com/user-attachments/assets/66f9ebbf-5d4e-4cb0-9b61-7ba6b216a0ea" />
+Remember Order: GROUP BY, HAVING, WINDOW, ORDER BY
 
-### SQL Notes
-SELECT   
-UPDATE..SET  
-DELETE, DELETE FROM  
-GROUP BY  
-HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions  
-ORDER BY
-GROUP BY, HAVING, WINDOW, ORDER BY
-INSERT INTO   
-CREATE DATABASE   
-ALTER DATABASE   
-CREATE TABLE   
-ALTER TABLE.. ADD/DROP/RENAME/ALTER COLUMN colname #skip keyword COLUMN for add case
-DROP TABLE   
-CREATE INDEX   
-DROP INDEX   
-TOP/LIMIT   
-IFNULL  
-IN   
-IN..SELECT 
-CASE WHEN..THEN..ELSE..END..AS #to create a new column based on conditions
-CONCAT
-PIVOT
-UNPIVOT
-BETWEEN (both begin and end values inclusive, works for text and date values as well) /
-MIN(), MAX(), COUNT(), SUM(), AVG()  #Aggregate functions ignore null values (except for COUNT()) /
-AS (keyword is optional) /
-EXISTS operator returns TRUE if the subquery returns one or more records
-LIKE (The percent sign % represents zero, one, or multiple characters, The underscore sign _ represents one, single character) /
-<img width="662" alt="image" src="https://github.com/user-attachments/assets/d64f23b7-1079-4f72-aa7f-ca4023b7749d" />  
-Comment formats: /* comments */  or --comments  
-For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-database/  
-Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.  
-Subqueries must always be enclosed in parentheses ().  
-For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/  
-For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp  
-
-##### JOINS (t1 JOIN t2 ON)/
+#### JOINS (t1 JOIN t2 ON)/
 * (INNER) JOIN: Returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
 * RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
@@ -46,24 +10,28 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * SELF JOIN (using two different aliases)
 * CROSS JOIN : Returns cross product of two tables (no need of ON condition)
 
-##### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
+#### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
 To perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
 <img width="870" alt="image" src="https://github.com/user-attachments/assets/dbf58fd2-4708-461d-882b-8b37c4d2d6fa" />
 Window frame extent: Eg. Use 5 PRECEDING
 <img width="626" alt="image" src="https://github.com/user-attachments/assets/e880acec-a326-4198-b2e3-26742afe6b1d" />
 
-* Aggregate: SUM(), AVG(), COUNT(), MAX(),MIN()
-  <img width="592" alt="image" src="https://github.com/user-attachments/assets/de680099-5d37-40ea-9c1a-e505c2f9fd7a" />
+##### Aggregate
+SUM(), AVG(), COUNT(), MAX(),MIN()
+<img width="592" alt="image" src="https://github.com/user-attachments/assets/de680099-5d37-40ea-9c1a-e505c2f9fd7a" />
 
-* Ranking: requires an ORDER BY sub-clause
+##### Ranking
+requires an ORDER BY sub-clause
 <img width="911" alt="image" src="https://github.com/user-attachments/assets/c2d40296-c79d-4c60-b844-ba8c42e17817" />
 <img width="809" alt="image" src="https://github.com/user-attachments/assets/700cf5f9-b10c-4df1-8141-e2845d11392e" />
 
 <img width="552" alt="image" src="https://github.com/user-attachments/assets/1807d0c4-3194-4737-bf94-77d103a2aace" />
-* Value: FIRST_VALUE(), LAST_VALUE(),
- <img width="711" alt="image" src="https://github.com/user-attachments/assets/2b875e47-7d02-4420-9df1-3200512d7e43" />
+##### Value
+FIRST_VALUE(), LAST_VALUE(),..
+<img width="711" alt="image" src="https://github.com/user-attachments/assets/2b875e47-7d02-4420-9df1-3200512d7e43" />
 
-* Lead/Lag: LEAD(), LAG()
+##### Lead/Lag: 
+LEAD(), LAG()
 Syntax: LAG/LEAD(expression [,offset[,default_value]]) OVER(ORDER BY columns)
 Expression: the name of the column from which the value is retrieved  
 Offset: the number of rows to skip. Defaults to 1.  
@@ -71,7 +39,7 @@ Default_value: the value to be returned if the value retrieved is null. Defaults
 Requires orderby clause  
 <img width="641" alt="image" src="https://github.com/user-attachments/assets/93f5b43a-889f-453f-93a0-ee51b8dc8a6d" />
 
-###### UNION (SELECT..UNION SELECT)
+#### UNION (SELECT..UNION SELECT)
 * The UNION operator is used to combine the result-set of two or more SELECT statements.
 * Every SELECT statement within UNION must have the same number of columns
 * The columns must also have similar data types
@@ -173,4 +141,40 @@ WITH totalSalary(Airline, total) AS (
     SELECT Airline
     FROM totalSalary, airlineAverage
     WHERE totalSalary.total > airlineAverage.avgSalary;
+
+#### SQL Keywords and Notes
+SELECT   
+UPDATE..SET  
+DELETE, DELETE FROM  
+GROUP BY  
+HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions  
+ORDER BY
+INSERT INTO   
+CREATE DATABASE   
+ALTER DATABASE   
+CREATE TABLE   
+ALTER TABLE.. ADD/DROP/RENAME/ALTER COLUMN colname #skip keyword COLUMN for add case
+DROP TABLE   
+CREATE INDEX   
+DROP INDEX   
+TOP/LIMIT   
+IFNULL  
+IN   
+IN..SELECT   
+CASE WHEN..THEN..ELSE..END..AS #to create a new column based on conditions  
+CONCAT  
+PIVOT  
+UNPIVOT  
+BETWEEN (both begin and end values inclusive, works for text and date values as well)   
+MIN(), MAX(), COUNT(), SUM(), AVG()  #Aggregate functions ignore null values (except for COUNT())   
+AS (keyword is optional)   
+EXISTS operator returns TRUE if the subquery returns one or more records  
+LIKE (The percent sign % represents zero, one, or multiple characters, The underscore sign _ represents one, single character)   
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/d64f23b7-1079-4f72-aa7f-ca4023b7749d" />    
+Comment formats: /* comments */  or --comments    
+For SQL triggers, refer to https://www.geeksforgeeks.org/sql-trigger-student-database    
+Subqueries can be used with operators like =, >, <, IN, NOT IN, LIKE, etc.    
+Subqueries must always be enclosed in parentheses ().  
+For SQL Sequences, refer to https://www.geeksforgeeks.org/sql-sequences/   
+For creating stored procedures with parameters, refer to https://www.w3schools.com/sql/sql_stored_procedures.asp   
 

@@ -44,6 +44,7 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
 * FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
 * SELF JOIN (using two different aliases)
+* CROSS JOIN : Returns cross product of two tables (no need of ON condition)
 
 ##### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
 SQL window functions can be categorized into two primary types: aggregate window functions and ranking window functions. These two types serve different purposes but share a common ability to perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)

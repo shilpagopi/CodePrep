@@ -29,7 +29,7 @@ ls1.extend(iterable) \
 newlist = [expression for item in iterable if condition == True] \
 ls.sort() \
 ls.sort(reverse=True) \
-ls.count(val)
+ls.count(val)  
 ls.reverse()
 
 ## Set
@@ -44,7 +44,7 @@ set_difference = set1 - set2
 Dict comprehension
 myMap = { i: 2*i for i in range(3) }
 
-Looping through maps
+Looping through maps  
 for key in myMap:
     print(key, myMap[key])
 

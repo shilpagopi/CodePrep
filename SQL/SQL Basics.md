@@ -8,7 +8,7 @@ DELETE, DELETE FROM
 GROUP BY  
 HAVING - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions  
 ORDER BY
-GROUP BY, HAVING, ORDER BY
+GROUP BY, HAVING, WINDOW, ORDER BY
 INSERT INTO   
 CREATE DATABASE   
 ALTER DATABASE   
@@ -47,7 +47,13 @@ For creating stored procedures with parameters, refer to https://www.w3schools.c
 * CROSS JOIN : Returns cross product of two tables (no need of ON condition)
 
 ##### Window Functions (FUNC(col1) OVER PARTITION BY Col2 ORDER BY Col3)
-SQL window functions can be categorized into two primary types: aggregate window functions and ranking window functions. These two types serve different purposes but share a common ability to perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
+To perform calculations over a defined set of rows while retaining the original data (eg. compute cumulative sales till date for every row)
+* Aggregate: SUM(), AVG(), COUNT(), MAX(),MIN()
+
+* Ranking 
+* Value: FIRST_VALUE(), LAST_VALUE()
+* Lead/Lag: LEAD(), LAG()
+These 
 <img width="1022" alt="image" src="https://github.com/user-attachments/assets/56e88298-28d5-43d9-bf20-62074a41c8f8" />
 <img width="745" alt="image" src="https://github.com/user-attachments/assets/36c00815-2c63-4472-a80a-97a3afd8492f" />
 
@@ -139,4 +145,18 @@ SQL window functions can be categorized into two primary types: aggregate window
 * SELECT Name, Age, Department, Salary, AVG(Salary) OVER (PARTITION BY Department) AS Avg_Salary FROM employee
 * SELECT Name, Department, Salary, RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS emp_rank FROM employee;
 * SELECT Date, Sales, SUM(Sales) OVER(ORDER BY Date) AS cumulative_sales_till_date FROM sales_data;
+
+* <img width="230" alt="image" src="https://github.com/user-attachments/assets/86bd1325-6656-4628-92e9-dbea4c46ceea" />
+WITH totalSalary(Airline, total) AS (
+    SELECT Airline, SUM(Salary)
+    FROM Pilot
+    GROUP BY Airline
+),
+    airlineAverage (avgSalary) AS (
+    SELECT avg(Salary)
+    FROM Pilot 
+)
+    SELECT Airline
+    FROM totalSalary, airlineAverage
+    WHERE totalSalary.total > airlineAverage.avgSalary;
 

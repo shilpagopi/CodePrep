@@ -48,3 +48,12 @@ string = input("Enter a string: ")
 numbers = input("Enter a list of numbers separated by spaces: ").split()
 numbers = [int(x) for x in numbers]
 ```
+
+#### TrieNode Declaration
+```python
+class TrieNode:
+    def __init__(self,val,endmarker=False):
+        self.val = val
+        self.dct = {}
+        self.endmarker = endmarker
+```

@@ -1,6 +1,6 @@
 # Arrays
 
-*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum, Replace 0 with -1
+*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum, Replace 0 with -1, Break a chain/circle into array with 2 cases of either ends being absent (eg. in DP questions).
 
 ## Sum
 #### Sub-Arrays with zero sum

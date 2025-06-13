@@ -1,7 +1,7 @@
 ### Routine Binary Search
 ```java
     public static int binarySearch(int arr[], int st, int end, int val){
-        if(st>end)
+        if(st>end or st==arr.length)
             return -1;
         int mid = (st+end)/2;
         if(arr[mid]==val)
@@ -14,7 +14,7 @@
 
 ```python
 def search(val,l,r):
-    while l<=r:
+    while l<=r and l<len(ls):
         m = (l+r)//2
         if ls[m]==val:
             return m

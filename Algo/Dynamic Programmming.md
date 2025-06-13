@@ -22,6 +22,9 @@ for (int i = 1; i <= target; ++i) {
    }
 }
 ``` 
+Approaching from target backwards:
+Think max/min dist from here(curr cell) to target, return dp[0][0] as ans.
+
 #### Distinct ways to reach target
 Sum all possible ways to reach the current state.
 
@@ -36,6 +39,17 @@ for (int i = 1; i <= target; ++i) {
 }
 ```
 
+If a 4 way matrix: use filltype or graph.
+When using dp for graph,
+```python 
+def dfs(src):
+   if dp[src] is not None:
+       return dp[src]
+   val=0
+   for adj in graph[src]:
+       val+=dfs(adj)
+   dp[src] = val #update as postconpute only after all further paths are traversed.
+```
 #### Given two strings s1 and s2, return some result.
 Most of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity.
 ```

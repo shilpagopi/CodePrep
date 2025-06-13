@@ -49,6 +49,7 @@ def dfs(src):
    for adj in graph[src]:
        val+=dfs(adj)
    dp[src] = val #update as postconpute only after all further paths are traversed.
+   return val
 ```
 #### Given two strings s1 and s2, return some result.
 Most of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity.

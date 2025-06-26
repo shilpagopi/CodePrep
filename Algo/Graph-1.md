@@ -3,6 +3,7 @@ A Graph is a non-linear data structure consisting of nodes and edges. \
 Trackers: seen[], explored[], parent_node (how did I reach the current vertex), adj_vertices, timings of seeing and exploration, BFS (distance from root node), DFS (computation from all subgraph)
 
 #### Specification questions: Directed? Cyclic? Weighted? Connected? Input format?
+#### What do we know? Curr_node, Adj, Parent/Predecessor node, Curr_time, Exit time, Explored nodes, Seen nodes, Cost
 
 ### Representations
 1. Adjacency Matrix : Space: O(V^2), Time: Edge accessing O(1)

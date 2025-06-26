@@ -100,3 +100,7 @@ Time complexity: O(n.wmax), Space complexity: O(n+sum of all word lengths)
 ### Greedy
 Min cost to connect sticks: sort, choose smallest two, combine and push into minheap 
 Time complexity: O(n log n), Space complexity:O(n) inplace heap
+
+### Word Break-II
+Word Segmentation: check for words to split. Use memoization (valid from index i). Time complexity: O(n.2^n), Space complexity: O(n*2^n)? No need ot use trie, as it will bring addiitonal storage overhead ?
+

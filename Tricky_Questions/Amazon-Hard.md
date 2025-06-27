@@ -27,4 +27,11 @@ Quick glance answer: Do Union-Find tracking size of connected components. Count 
 ### Serialize and desrialize N-ary tree
 * Preorder traversal with children count is usually recommended.
 
+### Orderly Queue
+Question: A string S of lowercase letters is given. Then, we may make any number of moves.
+In each move, we choose one of the first K letters (starting from the left), remove it, and place it at the end of the string.
+Return the lexicographically smallest string we could have after any number of moves.
+
+Answer: For k > 1, return the sorted string. For k==1, return the most smallest lexicographical rotation of the string.
+
 

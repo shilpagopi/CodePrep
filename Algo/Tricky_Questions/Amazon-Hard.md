@@ -11,3 +11,4 @@ Maintain a Monotonically Decreasing Deque of Indices: The deque stores the indic
 Iterate Through the Array: The following operations are performed at each step while iterating through the array nums using an index i:
 Remove Out-of-Bounds Indices from the front of the queue.
 Remove Smaller Elements: While the deque is not empty and the current element nums[i] is greater than or equal to the element at the back of the deque (nums[q[-1]]), pop elements from the back. These smaller elements are no longer relevant for determining the maximum in future windows.
+Time Complexity : O(n), Space complexity: O(k)

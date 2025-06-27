@@ -17,3 +17,10 @@ Time Complexity : O(n), Space complexity: O(k)
 Question: Splitting an array nums into k non-empty, contiguous subarrays to minimize the largest sum among them
 <img width="671" alt="image" src="https://github.com/user-attachments/assets/7a0ce1b5-81ca-4b2b-a5c8-4240338048a2" />
 Time complexity: O(n log(Sum - Maxelement)); Space complexity is O(1). 
+
+### Minimize Malware Spread
+Return the node that if removed, would minimize. Do Union-Find tracking size of connected components. Count initial affected node list and count no of infected nodes in each component. (if there are no two nodes, this component cannot be saved). 
+
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/a4a15d7b-bd61-41a3-b128-130acf4b3833" />
+
+

@@ -161,3 +161,6 @@ for each vertex V in G:
 Time complexity: O(V^3)
 
 Space complexity: O(V^2)
+
+### BFS 
+Use for shortest path from single src to single dest.

@@ -2,7 +2,8 @@
 Kruskal's: Builds the MST by adding edges in increasing order of weight, focusing on preventing cycles.
 Prim's: Grows the MST from a starting vertex by adding the cheapest edge to a non-MST vertex, focusing on connecting new vertices to the existing MST. 
 
-<img width="671" alt="image" src="https://github.com/user-attachments/assets/5db2383f-fedc-43a9-acb6-8053be5a8f53" />
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/5db2383f-fedc-43a9-acb6-8053be5a8f53" />  
+
 ```python
 def kruskal_mst(graph_edges, num_vertices):
     mst = []
@@ -34,7 +35,8 @@ def kruskal_mst(graph_edges, num_vertices):
     return mst
 ```
 
-<img width="671" alt="image" src="https://github.com/user-attachments/assets/2df3689b-6b7e-4df4-8f4e-03c230c46f04" />
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/2df3689b-6b7e-4df4-8f4e-03c230c46f04" />  
+
 ```python
 
 def prim_mst(graph_adj, num_vertices, start_vertex=0):

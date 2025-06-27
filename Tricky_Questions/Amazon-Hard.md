@@ -12,3 +12,8 @@ Iterate Through the Array: The following operations are performed at each step w
 Remove Out-of-Bounds Indices from the front of the queue.
 Remove Smaller Elements: While the deque is not empty and the current element nums[i] is greater than or equal to the element at the back of the deque (nums[q[-1]]), pop elements from the back. These smaller elements are no longer relevant for determining the maximum in future windows.
 Time Complexity : O(n), Space complexity: O(k)
+
+### Split Array sum
+Question: Splitting an array nums into k non-empty, contiguous subarrays to minimize the largest sum among them
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/7a0ce1b5-81ca-4b2b-a5c8-4240338048a2" />
+Time complexity: O(n log(Sum - Maxelement)); Space complexity is O(1). 

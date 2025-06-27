@@ -104,3 +104,8 @@ Time complexity: O(n log n), Space complexity:O(n) inplace heap
 ### Word Break-II
 Word Segmentation: check for words to split. Use memoization (valid from index i). Time complexity: O(n.2^n), Space complexity: O(n*2^n)? No need ot use trie, as it will bring addiitonal storage overhead ?
 
+### Super Washing Machines
+The minimum number of moves to equalize the number of dresses in each washing machine. Can move dresses only to nearby machines (dummy constraint). 
+convert array into arr[i]-avg. Take max(abs(cumulative_sum)).
+
+

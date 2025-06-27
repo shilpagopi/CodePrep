@@ -9,8 +9,8 @@ Insert at Index | ls.insert(i, val)|q.insert(i, val)|--|--|--|--|--
 Replace at Index | ls[i] = val|q[i]=val #inefficient||dct[k]=new_val|--|--|sorteddict[k]=new_val
 **Search**|||||||
 Contains k or v | val in ls|val in q| val in s| k in dct | in | in | in
-Search First/Last Occurrence | list.index(val[, start[, end]])|q.index(val[, start[, end]])| |--|--|--|--
-Count|ls.count(val)|q.count(val)|--|--|--|--|--
+Search First/Last Occurrence | list.index(val[, start[, end]])|q.index(val[, start[, end]])| |--|--|index(key)|index(key)
+Count|ls.count(val)|q.count(val)|--|--|--|count(key)|count(key)
 **Deletion**|||||||
 Remove First|--|q.popleft()|--| In ordered dict, od.popitem(last = False)|--|--|--
 Remove Last |ls.pop() Removes last|q.pop()||In ordered dict, od.popitem()|--|--|--
@@ -22,7 +22,7 @@ Fetch First/Last| ls[0], ls[-1] |q[0], q[-1]|||--|--|--
 **Constructors**||||||
 Definition | ls = [1,2,"hi"] or ls = list(iterable); arr = [[0] * 4 for i in range(4)]|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|from sortedcontainers import SortedSet <br> slist = SortedSet([1, 2])|from sortedcontainers import SortedList <br> slist = SortedList([1, 2])|from sortedcontainers import SortedDict <br> d = SortedDict({3: 'c', 1: 'a', 2: 'b'})
 **Extras**||||
-Extra functions:|list comprehensions squares = [x**2 for x in ls]; nums.reverse()  |q.rotate(-3) #rotate 3 to left|s.update(iterable)|popitem(),move_to_end()
+Extra functions:|list comprehensions squares = [x**2 for x in ls]; nums.reverse()  |q.rotate(-3) #rotate 3 to left|s.update(iterable)|popitem(),move_to_end()||bisect_left(key) or bisect_right(key):Finds an insertion point for a new key, to the left/right of existing entries if the key is present.|Valid for both SortedDict and SortedList
 
 ## List
 ls1.extend(iterable) \

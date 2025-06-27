@@ -34,4 +34,10 @@ Return the lexicographically smallest string we could have after any number of m
 
 Answer: For k > 1, return the sorted string. For k==1, return the most smallest lexicographical rotation of the string.
 
+### Max Chunks To Make Sorted II
+Question: Splitting an array into partitions that can be individually sorted and then concatenated to form a fully sorted array. 
+Quick glance answer: Use monotonic stack - The largest value in each chunk when the chunk cannot be partitioned to smaller ones. 
+
+The maximum value within each chunk must be less than or equal to the minimum value in the subsequent chunk. A monotonic stack helps track the maximum values of the chunks. When iterating through the array, if the current element is less than the stack's top, it means it belongs to an earlier chunk. Elements greater than the current element are popped, merging chunks, and the maximum of the popped elements is pushed back. The stack's final size indicates the maximum number of possible chunks.
+
 

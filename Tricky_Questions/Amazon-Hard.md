@@ -40,4 +40,10 @@ Quick glance answer: Use monotonic stack - The largest value in each chunk when 
 
 The maximum value within each chunk must be less than or equal to the minimum value in the subsequent chunk. A monotonic stack helps track the maximum values of the chunks. When iterating through the array, if the current element is less than the stack's top, it means it belongs to an earlier chunk. Elements greater than the current element are popped, merging chunks, and the maximum of the popped elements is pushed back. The stack's final size indicates the maximum number of possible chunks.
 
+### Concatenated Words
+Question: Given a list of words (without duplicates), find all the words that are "concatenated words".
+Quick glance answer: Sort the words by length, Use Trie, Backtracking, DP 
+Time Complexity: O(N * L^2) ?
+Space Complexity: O(N * L) 
+
 

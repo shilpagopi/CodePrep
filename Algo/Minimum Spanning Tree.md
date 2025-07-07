@@ -1,5 +1,5 @@
 # Minimum Spanning Tree
-Kruskal's: Builds the MST by adding edges in increasing order of weight, focusing on preventing cycles.
+Kruskal's: Builds the MST by adding edges in increasing order of weight, focusing on preventing cycles.  
 Prim's: Grows the MST from a starting vertex by adding the cheapest edge to a non-MST vertex, focusing on connecting new vertices to the existing MST. 
 
 <img width="671" alt="image" src="https://github.com/user-attachments/assets/5db2383f-fedc-43a9-acb6-8053be5a8f53" />  

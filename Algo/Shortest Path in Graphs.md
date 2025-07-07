@@ -36,7 +36,7 @@ class Graph:
 
    def shortest_distances(self, source: str):
        # Initialize the values of all nodes with infinity
-       distances = {node: float("inf") for node in self.graph}
+       distances = {node: float("inf") for node in self.graph}  # This will contain final distances. This is also used as intermediate comparison of distances (bets so far) to avoid pushign redundant edges to heap. Hence, this cannot be used as visited set.
        distances[source] = 0  # Set the source value to 0
 
        # Initialize a priority queue

@@ -142,3 +142,12 @@ eg. Handle boundaries by adding dummy elements (say ones). dp[i][j]: max coins t
 dp[i][j]=max(dp[i[j], nums[i]*nums[k]*nums[j] (=cost of bursting) + dp[i][k] + dp[k][j]
 ```
 Time complexity: O(n3), Space: O(n2)
+
+### Dynamic array changes in subproblems (Refer merge stones in groups of K)
+```
+dp(i,j,1) = dp(i,j,k) + sum[i..j] (Before converting any range to single pile, it should have k items in the previous iteration)
+dp(i,j,k) = dp(i,t,1) + dp(t+1,j,k-1) where  t lies between index i to j where i is inclusive and j is exclusive.
+dp(i,i,1) = 0
+```
+<img width="883" alt="image" src="https://github.com/user-attachments/assets/9a947c3d-f58f-4180-b359-c22d31a1abcf" />
+

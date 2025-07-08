@@ -1,6 +1,6 @@
 # Arrays
 
-*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum, Replace 0 with -1, Iterate or search (maybe binary search) in the known bound answer result space (Eg. koko eating bananas leetcode question), Break a chain/circle into array with 2 cases of either ends being absent (eg. in DP questions).
+*QuestionPatterns*: Swapping, Index Cycling/Swapping, Index Marking, Sliding Window, Sort and start+end pointers, Cumulative Sum, Replace 0 with -1, Iterate or search (maybe binary search) in the known bound answer result space (Eg. koko eating bananas leetcode question), Break a chain/circle into array with 2 cases of either ends being absent (eg. in DP questions), Intervals (Sort by start or end time - and think in terms of gantt chart) - use SortedDict from sortedcontainers for binary search
 
 ## Sum
 #### Sub-Arrays with zero sum

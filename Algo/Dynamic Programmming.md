@@ -124,7 +124,7 @@ if X[i]==X[j]
 else 
    dp[i][j] = max(dp[i-1][j],dp[i][j-1])
 ```   
-### Count the number of times a pattern appears in a string as subsequence
+#### Count the number of times a pattern appears in a string as subsequence
 *QuestionPattern*: DP
 ```
 T[i][j] = ((X[i] == Y[j]) ? T[i - 1][j - 1] : 0) + T[i - 1][j];
@@ -135,7 +135,7 @@ Eg. "sue" in "subsequence" 7 times.
 Traverse "subsequence". Store in an array the number of sequences ending at each letter of pattern until current element.   
 If "e" is found, e_count += u_count
 
-### 2 anchors DP
+#### 2 anchors DP
 Question pattern: when subproblems have discontinuous prev and next indices in an array. Approach by keeping start(i) and end(j) fixed. Refer balloon burst problem.
 eg. Handle boundaries by adding dummy elements (say ones). dp[i][j]: max coins that can be collected by bursting all balloons between i+1 and j-1. compute max by checking for each k being the last baloon, which means bursting b[k] would have i at prev val and j at next val.
 ```
@@ -143,7 +143,7 @@ dp[i][j]=max(dp[i[j], nums[i]*nums[k]*nums[j] (=cost of bursting) + dp[i][k] + d
 ```
 Time complexity: O(n3), Space: O(n2)
 
-### Dynamic array changes in subproblems (Refer merge stones in groups of K)
+#### Dynamic array changes in subproblems (Refer merge stones in groups of K)
 Question pattern: 3D DP, For a range i..j, find the cost of taking 1 item from i..t and k-1 item from t+1 to h
 ```
 dp(i,j,1) = dp(i,j,k) + sum[i..j] (Before converting any range to single pile, it should have k items in the previous iteration)
@@ -151,4 +151,7 @@ dp(i,j,k) = dp(i,t,1) + dp(t+1,j,k-1) where  t lies between index i to j where i
 dp(i,i,1) = 0
 ```
 <img width="883" alt="image" src="https://github.com/user-attachments/assets/9a947c3d-f58f-4180-b359-c22d31a1abcf" />
+
+#### DP in matrix
+Eg. Longest increasing path in a matrix:  dp[i][j] stores the lengths of the longest increasing paths starting from each cell. 
 

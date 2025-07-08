@@ -155,3 +155,6 @@ dp(i,i,1) = 0
 #### DP in matrix
 Eg. Longest increasing path in a matrix:  dp[i][j] stores the lengths of the longest increasing paths starting from each cell. 
 
+#### 3D DP
+Eg. Student attendance record combination problem. Draw 2 maps for n and n+1 2D states and define transitions. 
+

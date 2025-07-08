@@ -3,8 +3,10 @@ Tips:
 mid = (start + end) // 2  
 left_child = 2 * tree_idx + 1  
 right_child = 2 * tree_idx + 2  
-if start == end:  
-    self.tree[tree_idx] = self.arr[start]  
+
+Basecases: if start == end: self.tree[tree_idx] = self.arr[start]  #for build and update
+* For Query and update: Combine results from left and right nodes
+* All Functions with have these common parameters to track: (tree_idx, start, end)
 
 ```python
 class SegmentTree:

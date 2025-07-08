@@ -134,3 +134,11 @@ Alternative:
 Eg. "sue" in "subsequence" 7 times.  
 Traverse "subsequence". Store in an array the number of sequences ending at each letter of pattern until current element.   
 If "e" is found, e_count += u_count
+
+### 2 anchors DP
+Question pattern: when subproblems have discontinuous prev and next indices in an array. Approach by keeping start(i) and end(j) fixed. Refer balloon burst problem.
+eg. Handle boundaries by adding dummy elements (say ones). dp[i][j]: max coins that can be collected by bursting all balloons between i+1 and j-1. compute max by checking for each k being the last baloon, which means bursting b[k] would have i at prev val and j at next val.
+```
+dp[i][j]=max(dp[i[j], nums[i]*nums[k]*nums[j] (=cost of bursting) + dp[i][k] + dp[k][j]
+```
+Time complexity: O(n3), Space: O(n2)

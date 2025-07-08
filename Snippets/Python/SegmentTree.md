@@ -1,4 +1,11 @@
 # Segment Tree
+Tips:   
+mid = (start + end) // 2  
+left_child = 2 * tree_idx + 1  
+right_child = 2 * tree_idx + 2  
+if start == end:  
+    self.tree[tree_idx] = self.arr[start]  
+
 ```python
 class SegmentTree:
     def __init__(self, arr):

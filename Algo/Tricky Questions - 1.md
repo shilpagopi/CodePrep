@@ -101,3 +101,6 @@ Time complexity: O(n.wmax), Space complexity: O(n+sum of all word lengths)
 Min cost to connect sticks: sort, choose smallest two, combine and push into minheap 
 Time complexity: O(n log n), Space complexity:O(n) inplace heap
 
+### Guess the Word
+Question pattern: Greedy approach, pick the word that eliminates maximum options.
+

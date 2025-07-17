@@ -58,6 +58,10 @@ Memory: BFS: O(b^d), DFS: O(bh), where b: branching factor, d: at distance d fro
 	    - mark visited and DFS(adj,visited)
         - do any rootnode computation post all dfs exploration of subgraph
 ```
+Variants:
+QuestionPattern: BFS with state tracking: put all state variables in queue and visited. refer shortest path with Max k obstacle removal.
+
+
 ### Topological Sorting
 
 **_Keywords_: Dependencies, Stack**

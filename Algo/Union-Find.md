@@ -25,3 +25,5 @@ Union(x,y){
   }
 }
 ```
+Time Complexity: α(V): This is the Inverse Ackermann function, which is an extremely slowly growing function and almost a constant in practice. It comes into play due to the optimizations applied in the Union-Find data structure: path compression and union by rank (or size).  
+Space Complexity: O(V)

@@ -164,3 +164,9 @@ Space complexity: O(V^2)
 
 ### BFS 
 Use for shortest path from single src to single dest.
+Refer question Race car: both time and space complexities are O(target*log2(target)) as speed doubles everytime A(accelerated) and there are 0 to target potential stops.?
+
+## Tricky Questions/Variants
+### Question pattern: dynamic costs of edges based on an overall cost incurred so far 
+Refer question: Swim in Rising water
+How to handle: compute basic costs and maintain in heap. After popping from heap, compute final cost based on total cots incurred until now and edge cost. 

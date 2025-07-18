@@ -9,15 +9,15 @@ Insert at Index | ls.insert(i, val)|q.insert(i, val)|--|--|--|--|--
 Replace at Index | ls[i] = val|q[i]=val #inefficient||dct[k]=new_val|--|--|sorteddict[k]=new_val
 **Search**|||||||
 Contains k or v | val in ls|val in q| val in s| k in dct | in | in | in
-Search First/Last Occurrence | list.index(val[, start[, end]])|q.index(val[, start[, end]])| |--|--|index(key)|index(key)
-Count|ls.count(val)|q.count(val)|--|--|--|count(key)|count(key)
+Search First/Last Occurrence | list.index(val[, start[, end]])|q.index(val[, start[, end]])| |--|sortedset.index(key)|sortedlist.index(key)|sorteddict.index(key)
+Count|ls.count(val)|q.count(val)|--|--|--|sortedlist.count(key)|sorteddict.count(key)
 **Deletion**|||||||
-Remove First|--|q.popleft()|--| In ordered dict, od.popitem(last = False)|--|--|--
-Remove Last |ls.pop() Removes last|q.pop()||In ordered dict, od.popitem()|--|--|--
-Remove at index | ls.pop(i) or del ls[i]|--|--|del dict[key]|--|--|--
+Remove First|--|q.popleft()|--| In ordered dict, od.popitem(last = False)|sortedset.pop(0)|sortedlist.pop(0)|sorteddict.popitem(0)
+Remove Last |ls.pop() Removes last|q.pop()||In ordered dict, od.popitem()|sortedset.pop()|sortedlist.pop()|sorteddict.popitem()
+Remove at index | ls.pop(i) or del ls[i]|--|--|del dict[key]|sortedset.pop(index)|sortedlist.pop(index)|sorteddict.popitem(index)
 Remove element(#raises error if val not present) | ls.remove(val) (removes first occurrance)|q.remove(val) (removes first occurrance)|s.remove(val),  s.discard(val) - no error if absent| --|sortedset.remove(v) <br> sortedset.discard(v)|sortedlist.remove(v) <br> sortedlist.discard(v)|
 **Retrieval**|||||||
-Fetch using k or i | ls[i]|q[i] #ineffifcient||dct[k]|--|--|--|--
+Fetch using k or i | ls[i]|q[i] #ineffifcient||dct[k]|--|sortedset[i]|sortedlist[i]|sorteddict.peekitem[i]
 Fetch First/Last| ls[0], ls[-1] |q[0], q[-1]|||--|--|--
 **Constructors**||||||
 Definition | ls = [1,2,"hi"] or ls = list(iterable); arr = [[0] * 4 for i in range(4)]|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|from sortedcontainers import SortedSet <br> slist = SortedSet([1, 2])|from sortedcontainers import SortedList <br> slist = SortedList([1, 2])|from sortedcontainers import SortedDict <br> d = SortedDict({3: 'c', 1: 'a', 2: 'b'})

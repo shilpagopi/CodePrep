@@ -16,6 +16,7 @@
 Not valid for division
 * math.ceil(x), math.floor(x), math.pos(2,x), math.sqrt(x)
 * for object, use not obj. for values, be explicit in differentiating between val is None or val==0. (don't use "if val")
+* Tuple iteration: ls = [('a',1),('b',2)] for x,y in ls:....
 
 ``` python
 def factorial( n) :

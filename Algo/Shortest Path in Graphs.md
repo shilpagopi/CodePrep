@@ -2,7 +2,7 @@
 
 ## Dijkstra's
 
-**_Keywords_: Greedy, Priority Heap, Shortest path from a single source vertex to all other vertices, Go to nearest vertex and mark it covered**
+**_Keywords_: Greedy, Priority Heap, Shortest path from a single source vertex to all other vertices, Go to nearest vertex and mark it covered, Init: distances[V], visited[V],pq = [(0, source)],distances[source] = 0**
 
 #### Implementation
 ```

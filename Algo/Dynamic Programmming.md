@@ -10,7 +10,7 @@
 > If target variable is non-continuous, try using induction. 
 
 #### Find min/max cost/path/sum to reach Target
-Choose minimum (maximum) path among all possible paths before the current state, then add value for the current state
+Choose minimum (maximum) path among all possible paths before the current state, then add value for the current state (Fan-in approach)
 > routes[i] = min(routes[i-1], routes[i-2], ... , routes[i-k]) + cost[i]
 
 ```

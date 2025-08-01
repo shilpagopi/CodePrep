@@ -3,7 +3,7 @@
 * Trie = {}, curr = Trie, curr[child] = {} #Trie implementation 
 * Use enumerate: for i, val in enumerate(list):
 * ord('a'),chr(97)
-* strg[i]='c' is not supported in python.
+* strg[i]='c' is not supported in python. convert string to list. 
 * float('inf'),float('-inf') for extreme values
 * Init 1d list: seen = [None] * 5 
 * Init 2d list: matrix =[[0]*cols] * rows

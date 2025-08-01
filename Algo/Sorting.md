@@ -6,15 +6,15 @@
 * Selection sort is unstable, can be made stable. 
 
 #### Time & Space Complexities
-Sorting | Best| Average|Worst|Space|Stable
---|--|--|--|--|--|
-Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)|In-place|
-Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place|Stable
-Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place|Stable
-Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 |Unstable
-Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)   |Unstable 
-Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 |Stable
-Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)
+Sorting | Best| Average|Worst|Space|Stable|Remarks
+--|--|--|--|--|--|--
+Selection Sort|Ω(n^2)|θ(n^2)|O(n^2)|In-place|Can be made stable|select the winners|
+Bubble Sort|Ω(n)|	θ(n^2)|	O(n^2)| In-place|Stable|bubble up at end
+Insertion Sort|Ω(n)|	θ(n^2)|	O(n^2) |In-place|Stable|first part is sorted|
+Heap Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 ||Unstable
+Quick Sort|	Ω(n log(n))|	θ(n log(n))|	O(n^2)   ||Unstable |partition fn returns partition index
+Merge Sort|	Ω(n log(n))|	θ(n log(n))|	O(n log(n))	 ||Stable
+Bucket Sort|	Ω(n+k)|	θ(n+k)|	O(n^2)	| O(N+k)|Unstable
 Radix Sort||θ(digits * (n+base of decimal system))|	
 Counting Sort|Ω(n+k)|	θ(n+k)|	O(n+k)| k is the range of input|Stable
 

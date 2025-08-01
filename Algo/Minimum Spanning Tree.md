@@ -1,7 +1,7 @@
 # Minimum Spanning Tree
 ## Kruskal's: 
 Builds the MST by adding edges in increasing order of weight, focusing on preventing cycles using Union-Find, till V-1 edges are added. A simple "visited set" that just marks whether a vertex has been "seen" isn't enough because Kruskal's algorithm isn't about traversing the graph from a single starting point. It's about building a forest of trees that eventually merge into a single MST.  
-Init: mst = [], sorted_edges, parent[V],rank[V]; Until: edges_in_mst == num_vertices - 1
+Init: sorted_edges and Union-Find datastructures, mst= []; Until: edges_in_mst == num_vertices - 1
 ## Prim's: 
 Grows the MST from a starting vertex by adding the cheapest edge to a non-MST vertex, focusing on connecting new vertices to the existing MST, till all vertices are connected.
 Init: mst = [], min_heap, visited[V]

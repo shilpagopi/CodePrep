@@ -1,5 +1,6 @@
 # Stacks and Queues
 *QuestionPattern*: Stacks can be used to keep track of next greater/lesser element on either sides.
+*QuestionPattern*: For maintaining a fixed window, use a queue. Envision as a stack with bottom modifiable. At each new element in array, discard from bottom potential elements in out of window bounds. (Eg.Sliding Window Min/Max problem)
 
 #### Next Greater Element (First greatest element to right)  
 > BruteForce: O(n^2)  

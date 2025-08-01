@@ -1,5 +1,6 @@
 # Dynamic Programming
 ### General Tips:
+> 2-D DP: 
 > If only previous row is used, use 1-D array
 > If target variable is continuous and limited, use 2-D array pattern:
 > * Options on row and target in columns
@@ -7,7 +8,10 @@
 > * If options can be used only once: consider [i-1][j-optionvalue] term
 > * If option can be skipped: consider [i-1][j] term
 > * If option has a cost, add or multiply it alongwith the [j-optionvalue] term
-> If target variable is non-continuous, try using induction. 
+> If target variable is non-continuous, try using induction.
+> DFS + DP: use temp variable to accumulate all results of dfs from src. At the end, dp[src]=temp.
+> 1-D DPs: parallel arrays (Draw option pathways and choose the best eg. house robber problem)
+> 3-D DPs: if >2 params represent a state
 
 #### Find min/max cost/path/sum to reach Target
 Choose minimum (maximum) path among all possible paths before the current state, then add value for the current state (Fan-in approach)
@@ -95,7 +99,7 @@ Number of ways of achieving target sum S by rolling n dice together:
     for (int i = 2; i <= n; i++)
         for (int j = 1; j <= S; j++)
             for (int k = 1; k <= 6 && k < j; k++)
-                table[i][j] += table[i-1][j-k];
+                table[i][j] += table[i-1][j-k]; #table[i][j] = The number of ways to get a sum of j using i dice.
 ```
 
 #### Count number of Strictly Increasing Subarrays 
@@ -136,7 +140,7 @@ Traverse "subsequence". Store in an array the number of sequences ending at each
 If "e" is found, e_count += u_count
 
 #### 2 anchors DP
-Question pattern: when subproblems have discontinuous prev and next indices in an array. Approach by keeping start(i) and end(j) fixed. Refer balloon burst problem.
+*QuestionPattern*: when subproblems have discontinuous prev and next indices in an array. Approach by keeping start(i) and end(j) fixed. Refer balloon burst problem.
 eg. Handle boundaries by adding dummy elements (say ones). dp[i][j]: max coins that can be collected by bursting all balloons between i+1 and j-1. compute max by checking for each k being the last baloon, which means bursting b[k] would have i at prev val and j at next val.
 ```
 dp[i][j]=max(dp[i[j], nums[i]*nums[k]*nums[j] (=cost of bursting) + dp[i][k] + dp[k][j]
@@ -144,7 +148,7 @@ dp[i][j]=max(dp[i[j], nums[i]*nums[k]*nums[j] (=cost of bursting) + dp[i][k] + d
 Time complexity: O(n3), Space: O(n2)
 
 #### Dynamic array changes in subproblems (Refer merge stones in groups of K)
-Question pattern: 3D DP, For a range i..j, find the cost of taking 1 item from i..t and k-1 item from t+1 to h
+*QuestionPattern*: 3D DP, For a range i..j, find the cost of taking 1 item from i..t and k-1 item from t+1 to h
 ```
 dp(i,j,1) = dp(i,j,k) + sum[i..j] (Before converting any range to single pile, it should have k items in the previous iteration)
 dp(i,j,k) = dp(i,t,1) + dp(t+1,j,k-1) where  t lies between index i to j where i is inclusive and j is exclusive.?

@@ -4,7 +4,7 @@ Builds the MST by adding edges in increasing order of weight, focusing on preven
 Init: sorted_edges and Union-Find datastructures, mst= []; Until: edges_in_mst == num_vertices - 1
 ## Prim's: 
 Grows the MST from a starting vertex by adding the cheapest edge to a non-MST vertex, focusing on connecting new vertices to the existing MST, till all vertices are connected.
-Init: mst = [], min_heap, visited[V]
+Init: mst = [], min_heap (i.e.,(weight_to_neighbor, v, neighbor_of_v) : v is only utilize to identify full edge in output mst), visited[V]
 
 ---
 

@@ -1,4 +1,7 @@
 # Union-Find
+### At a Glance: 
+* Two arrays - parent[V], height[V]. Do path compression in find parent. Do merging based on height. T: Alpha(V) (inverse akkermann function), space: O(V)
+---
 ```
 Initialize parent[V] array with -1 values
 Initialize rank[V] array with 0 values

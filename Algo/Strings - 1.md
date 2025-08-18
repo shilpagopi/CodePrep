@@ -1,4 +1,5 @@
 # Strings
+### At a Glance: 
 > #### **Question-Patterns**  
 > * DP
 > * Rotation -> Concatenation
@@ -9,6 +10,7 @@
 <br>If subsequence and s[i]!=s[j], consider i+-1,j and i,j-1. 
 <br>If substring and s[i]!=s[j], restart from 0.
 <br>Take max/min of all cells. Cells can be length of string or true/false.
+---
 
 #### Longest common string between 2 strings
 *Question-Pattern* : DP

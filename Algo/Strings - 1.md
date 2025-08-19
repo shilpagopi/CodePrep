@@ -100,3 +100,13 @@ public static boolean expand(String str, int low, int high)
     return low==-1 && high==len;
 }
  ```
+
+#### Edit Distance
+```
+if s1[i]==s2[j]:
+    dp[i][j]=dp[i-1][j-1]
+else:
+    dp[i][j]=1+min(dp[i-1][j],dp[i-1][j-1],dp[i][j-1])
+```
+
+Time: O(N * M), Space: O(N * M)

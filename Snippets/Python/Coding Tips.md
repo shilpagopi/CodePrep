@@ -19,6 +19,37 @@ Not valid for division
 * for object, use not obj. for values, be explicit in differentiating between val is None or val==0. (don't use "if val")
 * Tuple iteration: ls = [('a',1),('b',2)] for x,y in ls:....
 
+```
+### List Equivalence
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+list3 = [3, 2, 1]
+print(list1 is list2) # Output: False
+print(list1 == list2) # Output: True # order-sensitive
+print(list1 == list3) # Output: False
+print(sorted(list1)==sorted(list3)) # Output: True
+
+# is vs. ==: is checks memory objetc equivalence
+
+### Set Equivalence
+listX = [1, 2, 2, 3]
+listY = [2, 1, 3]
+
+print(set(listX) == set(listY)) # Output: True
+
+### Dict Equivalence
+
+dict1 = {'a': 1, 'b': 2, 'c': 3}
+dict2 = {'c': 3, 'a': 1, 'b': 2}  # Same content, different order
+dict3 = {'a': 1, 'b': 2, 'd': 4}  # Different keys
+dict4 = {'a': 1, 'b': 5, 'c': 3}  # Different values
+
+print(f"dict1 == dict2: {dict1 == dict2}") #True # order-insensitive
+print(f"dict1 == dict3: {dict1 == dict3}") #False
+print(f"dict1 == dict4: {dict1 == dict4}") #False
+# in ==, both keys and corresponding values are checked.
+```
+
 ``` python
 def factorial( n) :
     M = 1000000007

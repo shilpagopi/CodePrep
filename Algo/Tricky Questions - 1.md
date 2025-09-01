@@ -104,3 +104,20 @@ Time complexity: O(n log n), Space complexity:O(n) inplace heap
 ### Guess the Word
 Question pattern: Greedy approach, pick the word that eliminates maximum options.
 
+### Leftmost Column with at Least a One 
+(https://algo.monster/liteproblems/1428)
+```python
+def leftMostColumnWithOne(self, binaryMatrix: 'BinaryMatrix') -> int:
+    rows, cols = binaryMatrix.dimensions()
+    r, c = 0, cols - 1
+    leftmost_col = -1
+    
+    while r < rows and c >= 0:
+        if binaryMatrix.get(r, c) == 1:
+            leftmost_col = c
+            c -= 1 
+        else:
+            r += 1
+    return leftmost_col
+```
+

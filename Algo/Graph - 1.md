@@ -43,6 +43,38 @@ E can vary from O(1) to O(V^2)
           - if not visited:
 	    - mark visited and add to queue/stack (call DFS recursively here inorder to not load up the stack space with the entire graph)
 ```
+
+```
+# DFS
+visited = set()
+visited.add(start_node)
+
+def dfs(graph, start_node, visited):
+    print(start_node) 
+
+    for neighbor in graph.get(start_node, []):
+        if neighbor not in visited:
+            visited.add(neighbor)
+            **dfs(graph, neighbor, visited)**
+
+# BFS
+visited = set()
+visited.add(start_node)
+
+queue = deque()
+queue.append(start_node)
+
+def bfs(graph, start_node):
+    while queue:
+        current_node = queue.popleft()
+        print(current_node)  # Print the visited node
+
+        # Explore neighbors of the current node
+        for neighbor in graph.get(current_node, []):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                **queue.append(neighbor)**
+```
 Time: O(V+E)  
 O(V+|E|) for directed and O(V+2|E|) for undirected  
 For disconnected graphs, check visited array in a wrapper loop  
@@ -82,3 +114,4 @@ In topological sorting, we use a temporary stack. We don’t print the vertex im
 - print stack
 ```
 Time: O(V+E)
+

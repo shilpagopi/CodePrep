@@ -102,11 +102,55 @@ public static boolean expand(String str, int low, int high)
  ```
 
 #### Edit Distance
+Thought process: If comparing, "abc" to "acd", to compute [1][1], think "ab"->"a", "a"->"ac","a->a and b->c"
+
+##### Case 1: Only Insertion Allowed
+Consider A is shorter than B. This is only possible if A is a subsequence of B. If A is a subsequence of B, the edit distance is simply the difference in their lengths. If A is not a subsequence of B, the transformation is impossible, and the edit distance is infinite.
+
+DP Table Formulation:
+* Let dp[i][j] be the minimum number of insertions to transform the first i characters of string A (A[1..i]) into the first j characters of string B (B[1..j]).
+* Base case: dp[0][0] = 0. dp[0][j] = j (insert j characters to get B[1..j]).
+* Recurrence relation:
+    * If A[i] == B[j], then dp[i][j] = dp[i-1][j-1] (no operation needed).
+    * If A[i] != B[j], then dp[i][j] = dp[i][j-1] + 1 (insert B[j]).
+
+Final answer: dp[m][n], where m and n are the lengths of A and B, respectively. If dp[m][n] is not equal to n-m (and A is a subsequence of B), then the transformation is impossible.
+
 ```
-if s1[i]==s2[j]:
-    dp[i][j]=dp[i-1][j-1]
-else:
-    dp[i][j]=1+min(dp[i-1][j],dp[i-1][j-1],dp[i][j-1])
+def isSubsequence(A, B):
+    i, j = 0, 0
+    while i < len(A) and j < len(B):
+        if A[i] == B[j]:
+            i += 1
+        j += 1
+    return i == len(A)
 ```
+
+##### Case 2: Only Insertion and Deletion Allowed
+Classic Longest Common Subsequence (LCS) problem. 
+
+DP Table Formulation:
+* Let dp[i][j] be the length of the LCS of A[1..i] and B[1..j].
+* Base case: dp[i][0] = 0 and dp[0][j] = 0.
+* Recurrence relation:
+    * If A[i] == B[j], then dp[i][j] = dp[i-1][j-1] + 1 (one more letter added to subsequence)
+    * If A[i] != B[j], then dp[i][j] = max(dp[i-1][j], dp[i][j-1]).
+
+Final answer: The length of the LCS is LCS = dp[m][n]. The minimum number of operations to transform string A into string B is the sum of characters that need to be deleted from A and those that need to be inserted to form B. The total number of operations is (length(A) - length(LCS)) + (length(B) - length(LCS)).The edit distance is m + n - 2 * LCS.
+
+##### Case 3: All Operations Allowed (Insertion, Deletion, Substitution)
+Standard Levenshtein distance problem.
+
+DP Table Formulation:
+* Let dp[i][j] be the minimum edit distance between A[1..i] and B[1..j].
+* Base case: dp[i][0] = i (delete i characters from A) and dp[0][j] = j (insert j characters to form B).
+* Recurrence relation:
+    * If A[i] == B[j], then dp[i][j] = dp[i-1][j-1] (no cost, characters match).
+    * If A[i] != B[j], we consider three possibilities and take the minimum:
+        * Deletion: dp[i-1][j] + 1 (delete A[i]).
+        * Insertion: dp[i][j-1] + 1 (insert B[j]).
+        * Substitution: dp[i-1][j-1] + 1 (substitute A[i] with B[j]). <br>
+        So, dp[i][j] =1(updation/deletion/substitution) + min(dp[i-1][j],dp[i-1][j-1],dp[i][j-1])
+Final answer: The minimum edit distance is dp[m][n].
 
 Time: O(N * M), Space: O(N * M)

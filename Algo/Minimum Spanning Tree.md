@@ -83,4 +83,16 @@ def prim_mst(graph_adj, num_vertices, start_vertex=0):
 
     return mst
 ```
-
+---
+## Prim's vs. Dijkstra's
+Logical Step | Prim's MST | Dijkstra's Shortest Pat |
+-- | --|--
+Function call|def dijkstra(graph, start_node):| def prim(graph, start_node):
+Initialization | min_heap = [] <br> covered = set() <br> distances = {node: float('inf') for node in graph}|    min_heap = [] <br> covered = set() <br> mst_edges = [] 
+Init_Prep |covered.add(start_node) <br> min_heap = [(0, start_node)] <br> distances[start_node] = 0| covered.add(start_node) <br> for neighbor, weight in graph[start_node]: <br> heapq.heappush(min_heap, (weight, neighbor, start_node))
+Loop Till | while min_heap:| while min_heap and **len(mst_vertices) < len(graph)**: 
+Pop Each Elem | current_distance, current_node = heapq.heappop(min_heap) <br> if current_node in covered: <br> continue <br> covered.add(current_node) | weight, curr_node, par_node = heapq.heappop(min_heap) <br> if curr_node in mst_vertices: <br> continue <br> covered.add(v)
+Update output | already done during insertion into minheap | **mst_edges.append((u, v, weight))**
+Heap Insertion | for neighbor, weight in graph[current_node].items(): <br>new_distance = current_distance + weight <br> **if new_distance < distances[neighbor]:** <br> distances[neighbor] = new_distance <br> **heapq.heappush(min_heap, (new_distance, neighbor))**| for neighbor, new_weight in graph[curr_node]: <br> if neighbor not in covered: <br> **heapq.heappush(min_heap, (new_weight, neighbor, curr_node))**
+Output| distances | mst_edges
+Remarks | * 2 elem in minheap tuples <br> * Explicitly add edge to res | * 3 elem in minheap tuples <br> * insert to heap only if dist is shorter than curr dist to node.

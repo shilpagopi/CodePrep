@@ -20,6 +20,17 @@ Not valid for division
 * Tuple iteration: ls = [('a',1),('b',2)] for x,y in ls:....
 
 ```
+from collections import Counter
+my_list = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+fruit_counts = Counter(my_list)
+print(fruit_counts) # Output: Counter({'apple': 3, 'banana': 2, 'orange': 1})
+
+# From a string
+my_string = "mississippi"
+letter_counts = Counter(my_string)
+```
+
+```
 ### List Equivalence
 list1 = [1, 2, 3]
 list2 = [1, 2, 3]

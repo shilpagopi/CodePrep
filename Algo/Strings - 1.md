@@ -5,11 +5,22 @@
 > * Rotation -> Concatenation
 > * Trie
 > * DP equations for a) longest palindromic substring b) longest palindromic subsequence c) longest common substring d) longest common subsequence.
+<br>
 <br>If single/same string: consider inner substring (i+1,j-1) and add 2 if s[i]==s[j] 
 <br>If two strings: consider till last index (i-1,j-1) and add 1 if s[i]==s[j]
 <br>If subsequence and s[i]!=s[j], consider i+-1,j and i,j-1. 
 <br>If substring and s[i]!=s[j], restart from 0.
 <br>Take max/min of all cells. Cells can be length of string or true/false.
+
+For same string, fill top triangular part.
+```
+#basecase for 2 will get auto filled if matrix init with 0. 
+for i in range(n):
+     dp[i][i] = 0 
+for length in range(1, n):
+    for i in range(n - length):
+         j = i + length
+```
 ---
 
 #### Longest common string between 2 strings

@@ -106,3 +106,37 @@ while len(ls)>0:
 	ls.append(node.left)
 return None
  ```
+
+### Get first leftmost value > K in each level
+*Question-Pattern*: BFS with levelsize
+```
+dq = deque([root])
+while dq: 
+   level_size=len(dq)
+   found = False
+   for i in range(level_size):
+       node = dq.popleft()
+       if not found and node.val>k:
+          print(node.val)
+          found = True
+       if node.left: 
+          queue.append(node.left)
+       if node.right:
+          queue.append(node.right)
+       
+```
+### Right View
+*Question-Pattern*: DFS with maxlevel global
+```
+maxlevel = -1
+def dfs(node,level):
+    if not node:
+       return
+    if level>maxlevel:
+       print(node.val)
+       maxlevel = level 
+    dfs(node.right,level+1)
+    dfs(node.left,level+1)
+```
+
+   

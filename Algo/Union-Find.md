@@ -1,4 +1,4 @@
-# Union-Find
+8# Union-Find
 ### At a Glance: 
 * Two arrays - parent[V], height[V]. Do path compression in find parent. Do merging based on height. T: Alpha(V) (inverse akkermann function), space: O(V)
 ---
@@ -30,3 +30,5 @@ Union(x,y){
 ```
 Time Complexity: α(V): This is the Inverse Ackermann function, which is an extremely slowly growing function and almost a constant in practice. It comes into play due to the optimizations applied in the Union-Find data structure: path compression and union by rank (or size).  
 Space Complexity: O(V)
+
+After all union find operations, number of groups = no of -1s in the array, and the corresponding indices are the roots of groups.

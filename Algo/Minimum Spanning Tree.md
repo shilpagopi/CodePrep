@@ -85,7 +85,7 @@ def prim_mst(graph_adj, num_vertices, start_vertex=0):
 ```
 ---
 ## Prim's vs. Dijkstra's
-Logical Step | Prim's MST | Dijkstra's Shortest Pat |
+Logical Step | Dijkstra's Shortest Path| Prim's MST 
 -- | --|--
 Function call|def dijkstra(graph, start_node):| def prim(graph, start_node):
 Initialization | min_heap = [] <br> covered = set() <br> distances = {node: float('inf') for node in graph}|    min_heap = [] <br> covered = set() <br> mst_edges = [] 

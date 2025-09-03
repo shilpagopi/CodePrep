@@ -30,7 +30,7 @@ Approaching from target backwards:
 Think max/min dist from here(curr cell) to target, return dp[0][0] as ans.
 
 #### Distinct ways to reach target
-Sum all possible ways to reach the current state.
+Sum all possible ways to reach the current state. Sometimes, fwd approach helps to reduce space complexity to O(1) than backward O(n).eg.Decode ways problem
 
 > routes[i] = routes[i-1] + routes[i-2], ... , + routes[i-k]
 ```

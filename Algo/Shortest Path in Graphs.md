@@ -95,7 +95,7 @@ def shortest_path(self, source: str, target: str):
    return path
 ```
 
-Time complexity: O(E.logV) (Derived from  E * pop vertices from minHeap of size |E|: Elog(E) => Elog(V^2) => E.logV)
+Time complexity: O(E.logV) (Derived from  E * pop vertices from minHeap of size |E|: Elog(E) => Elog(V^2) => E.logV). Think of Extract-min and Edge Relaxation.
 
 ## Bellman–Ford 
 **_Keywords_: Relax all E for |V|-1 times, Shortest path from a single source vertex to all other vertices, Dis[v] array - relax over all E.**

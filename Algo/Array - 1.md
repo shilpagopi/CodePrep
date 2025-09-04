@@ -123,3 +123,6 @@ for i in range(0, len(A)):
             if (A[i] != i) :
                 A[i] = -1; 
 ```
+
+## Circular Array (wrapping around)
+* Use modulo logic: (s[i] - s[i-1] + 26) % 26 (Eg: Refer Group Shifted strings)

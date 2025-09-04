@@ -47,7 +47,7 @@ for(int i = 1 to l):
         dp is max of (without making a cut of length i, cut length i and not cuts in j-i, cut length i and cut length j-i)
 ```
 
-### Generate n binary numbers
+#### Generate n binary numbers
 *QuestionPattern* : BFS of binary tree with every node 0 and 1.
 ```
 q.append('1')
@@ -56,19 +56,19 @@ for i in range(n):
     q.append(front + '0')
     q.append(front + '1')
 ```
-### Find correct order of alphabets in a given dictionary of ancient origin
+#### Find correct order of alphabets in a given dictionary of ancient origin
 *QuestionPattern* : Topological Sort of DAG
 For every two adjacent words, consider an edge between first pair of mismatched characters
 Time: O(N.M)
 
-### Length of longest balanced parenthesis in a string
+#### Length of longest balanced parenthesis in a string
 *QuestionPattern* : Replacement using +/-1, hashmap
 1. Skip all )).. present at the start
 2. Use hashmap to store earliest index of cumulative sum
 3. Add 0 at -1th index
 4. Find cumulative sum
 
-### Word segmentation
+#### Word segmentation
 *QuestionPattern*: Trie
 ```java
 public static boolean wordBreak(Node head, String str)
@@ -97,14 +97,14 @@ public static boolean wordBreak(Node head, String str)
 ```
 Time complexity: O(n.wmax), Space complexity: O(n+sum of all word lengths)
 
-### Greedy
+#### Greedy
 Min cost to connect sticks: sort, choose smallest two, combine and push into minheap 
 Time complexity: O(n log n), Space complexity:O(n) inplace heap
 
-### Guess the Word
-Question pattern: Greedy approach, pick the word that eliminates maximum options.
+#### Guess the Word
+**Question-Pattern**: Greedy approach, pick the word that eliminates maximum options.
 
-### Leftmost Column with at Least a One 
+#### Leftmost Column with at Least a One 
 (https://algo.monster/liteproblems/1428)
 ```python
 def leftMostColumnWithOne(self, binaryMatrix: 'BinaryMatrix') -> int:
@@ -120,4 +120,6 @@ def leftMostColumnWithOne(self, binaryMatrix: 'BinaryMatrix') -> int:
             r += 1
     return leftmost_col
 ```
-
+#### Fun to pick based on probability
+**Question-Pattern**: Prefix sum (Eg.Random pick with weight)
+* Sort the array, find cumulative sum and generate a random.random()*total_sum, and return the element at bisect_right position.

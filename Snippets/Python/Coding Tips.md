@@ -19,6 +19,17 @@ Not valid for division
 * math.ceil(x), math.floor(x), math.pos(2,x), math.sqrt(x)
 * for object, use not obj. for values, be explicit in differentiating between val is None or val==0. (don't use "if val")
 * Tuple iteration: ls = [('a',1),('b',2)] for x,y in ls:....
+* isdigit()
+```
+print('12345'.isdigit())  # True
+print('10'.isdigit())     # True
+print('²'.isdigit())       # True (² is a Unicode digit)
+
+# Returns False
+print('Hello'.isdigit())  # False (Contains letters)
+print('12.34'.isdigit())  # False (Contains a decimal point)
+print('-50'.isdigit())    # False (Contains a minus sign)
+```
 
 ```
 from collections import Counter

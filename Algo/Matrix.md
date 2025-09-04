@@ -13,3 +13,32 @@ Time Complexity: O(m * n log (m * n)) (=Sorting all coordinates of each island),
 * Take directions as a list
 * Mark visited in matrix to avoid cycles or store cost in the cells
 * If cost of different directions vary, add the nil cost to from of the queue and higher costs to end of queue.
+
+Sample code:
+```python
+def shortestPathBinaryMatrix(self, grid: list[list[int]]) -> int:
+      n = len(grid)
+
+      if grid[0][0] == 1 or grid[n-1][n-1] == 1:
+          return -1
+      
+      queue = collections.deque([(0, 0, 1)])  # (row, col, path_length)
+      grid[0][0] = 1
+      directions = [(-1, 0),(0, -1), (0, 1),(1, 0)]
+      
+      while queue:
+          r, c, length = queue.popleft()
+
+          if r == n - 1 and c == n - 1:
+              return length
+          
+          for dr, dc in directions:
+              nr, nc = r + dr, c + dc
+              
+              # Check for valid neighbors
+              if 0 <= nr < n and 0 <= nc < n and grid[nr][nc] == 0:
+                  grid[nr][nc] = 1 # Mark as visited
+                  queue.append((nr, nc, length + 1))
+      
+      return -1
+```

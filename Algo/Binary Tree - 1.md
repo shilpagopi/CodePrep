@@ -123,10 +123,10 @@ return None
 
 ### Get first leftmost value > K in each level
 *Question-Pattern*: BFS with levelsize
-```
+```python
 dq = deque([root])
 while dq: 
-   level_size=len(dq)
+   level_size=len(dq) #Design: Can traverse only nodes on a single level even though dq keeps growing
    found = False
    for i in range(level_size):
        node = dq.popleft()

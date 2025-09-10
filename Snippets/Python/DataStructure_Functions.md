@@ -20,7 +20,7 @@ Remove element(#raises error if val not present) | ls.remove(val) (removes first
 Fetch using k or i | ls[i]|q[i] #ineffifcient||dct[k]|--|sortedset[i]|sortedlist[i]|sorteddict.peekitem[i]
 Fetch First/Last| ls[0], ls[-1] |q[0], q[-1]|||--|--|--
 **Constructors**||||||
-Definition | ls = [1,2,"hi"] or ls = list(iterable); arr = [[0] * 4 for i in range(4)]|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| d = {} or d = OrderedDict()|from sortedcontainers import SortedSet <br> slist = SortedSet([1, 2])|from sortedcontainers import SortedList <br> slist = SortedList([1, 2])|from sortedcontainers import SortedDict <br> d = SortedDict({3: 'c', 1: 'a', 2: 'b'})
+Definition | ls = [1,2,"hi"] or ls = list(iterable); arr = [[0] * 4 for i in range(4)]|q = deque() or q = deque(iterable)| s= set() or s= set(iterable) or s = {1,2,3}| from collections import OrderedDict <br> d = {} or d = OrderedDict()|from sortedcontainers import SortedSet <br> slist = SortedSet([1, 2])|from sortedcontainers import SortedList <br> slist = SortedList([1, 2])|from sortedcontainers import SortedDict <br> d = SortedDict({3: 'c', 1: 'a', 2: 'b'})
 **Extras**||||
 Extra functions:|list comprehensions squares = [x**2 for x in ls]; nums.reverse()  |q.rotate(-3) #rotate 3 to left|s.update(iterable)|popitem(),move_to_end()||bisect_left(key) or bisect_right(key):Finds an insertion point for a new key, to the left/right of existing entries if the key is present.|Valid for both SortedDict and SortedList
 

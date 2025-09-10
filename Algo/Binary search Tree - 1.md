@@ -1,7 +1,7 @@
 # Binary Search Tree - 1
 ### Node Searching
-```java
-public Node search(Node root, int key) 
+```python
+public search(root, key) 
 { 
     if (root==null || root.key==key) 
         return root; 
@@ -11,12 +11,19 @@ public Node search(Node root, int key)
 } 
 ```
 ### Node Insertion
-```java
-//replace in above code
-if (root == null) { 
-    root = new Node(key); 
-    return root; 
-} 
+```python
+def insert(root, key):
+    # Base Case: If the tree is empty, return a new node
+    if root is None:
+        return Node(key)
+    
+    # Recursive Step: Traverse the tree to find the correct insertion spot
+    if key < root.key:
+        root.left = insert(root.left, key)
+    elif key > root.key:
+        root.right = insert(root.right, key)
+
+    return root
  ```
   
 ### Node Deletion

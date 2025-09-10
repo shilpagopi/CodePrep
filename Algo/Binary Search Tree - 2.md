@@ -1,7 +1,7 @@
 # Binary Search Tree - 2
 ### Node Finder
 #### Get Inorder Successor
-If key is not present, get just larger value, if exists.
+Irrespective of key being present or absent, get next larger value, if exists.
 ```java
 public TreeNode getMinimum(TreeNode root){
     while(root!=null && root.left!=null)
@@ -11,7 +11,7 @@ public TreeNode getMinimum(TreeNode root){
 
 TreeNode findInorderSuccessor(TreeNode root, TreeNode succ, int key)
 {
-    if (root==null)
+    if (root==null) #key absent
         return succ;
     if (key > root->data) //successor lies in right tree
           return findInorderSuccessor(root->right,key);    
@@ -20,7 +20,7 @@ TreeNode findInorderSuccessor(TreeNode root, TreeNode succ, int key)
         succ = root; //root node is a potential successor
         return findInorderSuccessor(root->left,succ,key);
     }
-    else // node value = key
+    else // node value = key #key present
     {
         if (root->right)
             return getMinimum(root->right);

@@ -29,11 +29,25 @@
  > Print levels from r->l and l->r alternatively
  
  ```
- # Modify in above code:
- if level is odd:
-    add right, add left
- else:
-    add left, add right
+dq = collections.deque([root])
+next_lvl = []
+l2r = False
+while dq:
+    node = dq.popleft()
+    print(node.val)
+
+    if node.left:
+        next_lvl.append(node.left)
+    if node.right:
+        next_lvl.append(node.right)
+    
+    # Design: Do any levelwise operations here.
+    if len(dq)==0 and len(next_lvl)>0:
+        if l2r:
+            next_lvl.reverse()
+        l2r = not l2r
+        dq.extend(next_lvl)
+        next_lvl = []
  ```
  
   * Reverse Level order traversal 

@@ -1,6 +1,7 @@
 # Binary Search Tree - 2
 ### Node Finder
 #### Get Inorder Successor
+**Question-Pattern**: Passing a "val until now" or constraint in the argument.
 Irrespective of key being present or absent, get next larger value, if exists.
 ```java
 public TreeNode getMinimum(TreeNode root){
@@ -33,6 +34,7 @@ TreeNode findInorderSuccessor(TreeNode root, TreeNode succ, int key)
 > if n>n1 and n>n2, go left, else go right
 
 #### Kth largest element in BST:
+**Question-Pattern**: Passing a "val until now" or constraint in the argument.
 ```java
 // Reverse inorder traversal with count
 int k=0
@@ -46,6 +48,7 @@ def inorder(root):
 ```
 
 #### Find largest node <=K
+**Question-Pattern**: In BST, iterative approach with global variable can be used if only one path (left or right) needs to be checked
 ```java
 def findNum (node,K)
 {
@@ -67,8 +70,8 @@ def findNum (node,K)
 }
 ```
 
-### Checking
 #### Is Valid BST ?
+**Question-Pattern**: Passing constraint(s) in the argument.
 ```java
 isBST(node, INT_MIN, INT_MAX)
 

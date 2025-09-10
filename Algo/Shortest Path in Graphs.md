@@ -38,6 +38,7 @@ class Graph:
        # Initialize the values of all nodes with infinity
        distances = {node: float("inf") for node in self.graph}  # This will contain final distances. This is also used as intermediate comparison of distances (bets so far) to avoid pushign redundant edges to heap. Hence, this cannot be used as visited set.
        distances[source] = 0  # Set the source value to 0
+       predecessors = {node: None for node in self.graph} # Initialize the predecessors dictionary to track the path
 
        # Initialize a priority queue
        pq = [(0, source)]
@@ -57,11 +58,12 @@ class Graph:
            visited.add(current_node)  # Else, add the node to visited set
 
            for neighbor, weight in self.graph[current_node].items():
-	       # Calculate the distance from current_node to the neighbor
-	       tentative_distance = current_distance + weight
-	       if tentative_distance < distances[neighbor]:
-	           distances[neighbor] = tentative_distance
-	           heappush(pq, (tentative_distance, neighbor))
+		       # Calculate the distance from current_node to the neighbor
+		       tentative_distance = current_distance + weight
+		       if tentative_distance < distances[neighbor]:
+		           distances[neighbor] = tentative_distance
+		           heappush(pq, (tentative_distance, neighbor))
+	               predecessors[neighbor] = current_node
 	
 	return distances
 ```

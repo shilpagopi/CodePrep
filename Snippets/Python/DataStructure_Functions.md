@@ -29,6 +29,7 @@ ls1.extend(iterable) \
 newlist = [expression for item in iterable if condition == True] \
 ls.sort() \
 ls.sort(reverse=True) \
+my_list.sort(key=lambda x: len(x)) \
 ls.count(val)  
 ls.reverse()
 

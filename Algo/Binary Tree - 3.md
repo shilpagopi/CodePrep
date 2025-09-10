@@ -21,29 +21,27 @@
  ```
 
  
-```java
-public void serialize(Node root, ArrayList<Integer> A) {
-	    if(root==null){
-	        A.add(-1);
-	        return;
-	    }
-	    
-	    A.add(root.data);
-	    serialize(root.left, A);
-	    serialize(root.right, A);
-	}
-	
-  public Node deSerialize(ArrayList<Integer> A){
-      if(A.size()==0)
-          return null;
-      if(A.get(0)==-1){
-          A.remove(0);
-          return null;
-      }    
-      Node n = new Node(A.get(0));
-      A.remove(0);
-      n.left = deSerialize(A);
-      n.right = deSerialize(A);
-      return n;
-    }
+```python
+def serialize(root):
+    if root is None:
+        return ["#"]
+    # Pre-order traversal
+    return [str(root.data)] + serialize(root.left) + serialize(root.right)
+
+index = 0	
+def deserialize(data):
+    # Base case: If the current element is the null marker, return None.
+    if index >= len(data) or data[index] == "#":
+        # Increment the index for the next recursive call
+        index += 1
+        return None
+
+    val = data[index]
+    node = Node(int(val))
+    index += 1
+
+    node.left = deserialize(data, index)
+    node.right = deserialize(data, index)
+
+    return node
 ```

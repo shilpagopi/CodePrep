@@ -28,7 +28,7 @@
  
  > Print levels from r->l and l->r alternatively
  
- ```
+ ```python
 dq = collections.deque([root])
 next_lvl = []
 l2r = False

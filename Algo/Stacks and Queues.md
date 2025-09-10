@@ -31,6 +31,5 @@
 > Logic: For every bar, we consider the largest possible rectangle that uses that bar as its minimum height. The left[i] and right[i] indices define the maximum possible width for a rectangle of height heights[i] because any wider rectangle would have to include a bar shorter than heights[i], which would then limit its height.
 
 #### Longest balanced parenthesis in a string
-* Use stack to traverse through the string like parenthesis balancing; Add -1 index to stack at beginning.
-* Alternative: use +/-1 and store in hashmap the first index at which cumulative sum is found
+* Use stack to traverse through the string like parenthesis balancing; Add potential_start_point = -1. If stranded closing brackets are found, set potential start, potential_start_point = index of last invalid closing bracket (because the earlier portion of the string cannot be clubbed into the newer valid portions in any way.)
 * Time complexity: O(n), Space: O(n)

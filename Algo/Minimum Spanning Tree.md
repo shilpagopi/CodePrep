@@ -89,7 +89,7 @@ Logical Step | Dijkstra's Shortest Path| Prim's MST
 -- | --|--
 Function call|def dijkstra(graph, start_node):| def prim(graph, start_node):
 Initialization | min_heap = [] <br> covered = set() <br> distances = {node: float('inf') for node in graph}|    min_heap = [] <br> covered = set() <br> mst_edges = [] 
-Init_Prep |covered.add(start_node) <br> min_heap = [(0, start_node)] <br> distances[start_node] = 0| covered.add(start_node) <br> for neighbor, weight in graph[start_node]: <br> heapq.heappush(min_heap, (weight, neighbor, start_node))
+Init_Prep | min_heap = [(0, start_node)] <br> distances[start_node] = 0| **covered.add(start_node)** <br> for neighbor, weight in graph[start_node]: <br> heapq.heappush(min_heap, (weight, neighbor, start_node))
 Loop Till | while min_heap:| while min_heap and **len(mst_vertices) < len(graph)**: 
 Pop Each Elem | current_distance, current_node = heapq.heappop(min_heap) <br> if current_node in covered: <br> continue <br> covered.add(current_node) | weight, curr_node, par_node = heapq.heappop(min_heap) <br> if curr_node in mst_vertices: <br> continue <br> covered.add(v)
 Update output | already done during insertion into minheap | **mst_edges.append((u, v, weight))**

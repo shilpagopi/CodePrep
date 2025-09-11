@@ -66,7 +66,7 @@ Can be checked by 2-coloring or does not contain any odd cycle
     }
 ``` 
 #### Check for cycles in undirected graph using Union-Find
-*QuestionPattern*: Union-Find initialize parent with Vi value
+*QuestionPattern*: Edge-traversal, Union-Find initialize parent with Vi value
 
 ```java
         // Iterate for every edge (u, v)

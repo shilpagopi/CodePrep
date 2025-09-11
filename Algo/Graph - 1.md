@@ -99,19 +99,46 @@ QuestionPattern: BFS with state tracking: put all state variables in queue and v
 **_Keywords_: Dependencies, Stack**
 
 Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge uv, vertex u comes before v in the ordering.
-#### Implementation
+#### DFS Implementation
 In topological sorting, we use a temporary stack. We don’t print the vertex immediately, we first recursively call topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of stack.			
 ```
 - loop thru vertices:
-  - mark v as visited and call topologicalSort(v)
+  - mark src as visited and call topologicalSort(src)
   
 - topologicalSort(v)
   - for all its adjacent nodes:
       - if not visited:
+        - mark adj as visited
 	    - call TopologicalSort()
-  - push to stack
+  - push to stack #Design: Post compute after DFS
   
 - print stack
 ```
 Time: O(V+E)
+
+#### Kahn's algorithm
+If cycles are present, then topological sort will not be able to cover all vertices.
+```python
+    queue = deque([u for u in in_degree if in_degree[u] == 0])
+
+    topological_order = []
+    while queue:
+        u = queue.popleft()
+        topological_order.append(u)
+
+        # Decrease in-degree of adjacent vertices and add to queue if their in-degree becomes 0
+        for v in adj[u]:
+            in_degree[v] -= 1
+            if in_degree[v] == 0:
+                queue.append(v)
+
+    # Check for cycles
+    if len(topological_order) == len(in_degree):
+        return topological_order
+    else:
+        # A cycle exists, as not all vertices were included in the sort
+        return []
+```
+Time: O(V+E), Space: O(V)
+
 
